@@ -1,0 +1,11 @@
+[package]
+name = "cube-sniper"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.12.4", features = ["blocking"] }
+select = "0.6.0"
+
+[profile.release]
+strip = true
