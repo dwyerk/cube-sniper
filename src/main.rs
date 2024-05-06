@@ -4,8 +4,8 @@ use select::document::Document;
 use select::predicate::{Attr, Name, Predicate};
 use clap::Parser;
 use cube_sniper::wca::{WCA_BASE_URL, Competition};
+use cube_sniper::geometry::haversine_distance;
 
-const EARTH_RADIUS_MI: f64 = 3959.0; // Earth radius in miles
 
 #[derive(Parser)]
 struct Cli {
@@ -120,18 +120,6 @@ fn retrieve_competitions(region: &str) -> Result<String, Box<dyn Error>> {
         .text()?;
     Ok(res)
 }
-
-fn haversine_distance(lat_long1: (f64, f64), lat_long2: (f64, f64)) -> f64 {
-    let (lat1, lon1) = lat_long1;
-    let (lat2, lon2) = lat_long2;
-    let radius = EARTH_RADIUS_MI;
-    let dlat = (lat2 - lat1).to_radians();
-    let dlon = (lon2 - lon1).to_radians();
-    let a = (dlat / 2.0).sin() * (dlat / 2.0).sin() + lat1.to_radians().cos() * lat2.to_radians().cos() * (dlon / 2.0).sin() * (dlon / 2.0).sin();
-    let c = 2.0 * a.sqrt().atan2((1.0 - a).sqrt());
-    radius * c
-}
-
 
 // This function will take a vector of competitions and a search location and return a vector of competitions within a certain distance of the search location
 // Shouldn't I rewrite this to return Some/None instead of Vec?
