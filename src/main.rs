@@ -3,47 +3,14 @@ use std::error::Error;
 use select::document::Document;
 use select::predicate::{Attr, Name, Predicate};
 
+use cube_sniper::wca::{WCA_BASE_URL, Competition};
 const EARTH_RADIUS_MI: f64 = 3959.0; // Earth radius in miles
-const WCA_BASE_URL: &str = "https://www.worldcubeassociation.org";
 
-struct Competition {
-    name: String,
-    marker_date: String,
-    latitude_degrees: String,
-    longitude_degrees: String,
-    lat_long: (f64, f64),
-    city_name: String,
-    url: String,
-}
-
-impl Competition {
-    fn new(name: String, marker_date: String, latitude_degrees: String, longitude_degrees: String, city_name: String, url: String) -> Self {
-        let lat_long = (latitude_degrees.parse::<f64>().unwrap(), longitude_degrees.parse::<f64>().unwrap());
-        let url = format!("{}{}", WCA_BASE_URL, url);
-        Self {
-            name,
-            marker_date,
-            latitude_degrees,
-            longitude_degrees,
-            lat_long,
-            city_name,
-            url,
-        }
-    }
-    fn print(&self) {
-        println!("Name: {}", self.name);
-        println!("Marker Date: {}", self.marker_date);
-        println!("Latitude Degrees: {}", self.latitude_degrees);
-        println!("Longitude Degrees: {}", self.longitude_degrees);
-        println!("Lat Long: {:?}", self.lat_long);
-        println!("City Name: {}", self.city_name);
-        println!("URL: {}", self.url);
-    }
-}
 
 fn main() {
     let mut competitions = get_competitions("USA").unwrap();
 
+    // debug
     if false {
         for competition in competitions.as_slice() {
             competition.print();
@@ -124,17 +91,7 @@ fn get_competitions(region: &str) -> Result<Vec<Competition>, Box<dyn Error>> {
             }
         }
 
-        // Create a Competition struct and push it to the vector
         let competition_data = Competition::new(name, marker_date, latitude_degrees, longitude_degrees, city_name, url);
-        // let competition_data = Competition {
-        //     name,
-        //     marker_date,
-        //     latitude_degrees: latitude_degrees.clone(),
-        //     longitude_degrees: longitude_degrees.clone(),
-        //     lat_long: (latitude_degrees.parse::<f64>().unwrap(), longitude_degrees.parse::<f64>().unwrap()),
-        //     city_name,
-        //     url: format!("https://www.worldcubeassociation.org{}", url),
-        // };
         competition_vec.push(competition_data);
     }
     Ok(competition_vec)
