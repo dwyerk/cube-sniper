@@ -2,13 +2,36 @@ use std::error::Error;
 
 use select::document::Document;
 use select::predicate::{Attr, Name, Predicate};
-
+use clap::Parser;
 use cube_sniper::wca::{WCA_BASE_URL, Competition};
+
 const EARTH_RADIUS_MI: f64 = 3959.0; // Earth radius in miles
 
+#[derive(Parser)]
+struct Cli {
+    region: String,
+    lat_long: String,
+    #[arg(default_value_t = 150.0)]
+    distance: f64,
+}
+
+fn parse_lat_long(lat_long: &str) -> (f64, f64) {
+    let lat_long = lat_long.split(",").collect::<Vec<&str>>();
+    (lat_long[0].parse::<f64>().unwrap(), lat_long[1].parse::<f64>().unwrap())
+}
 
 fn main() {
-    let mut competitions = get_competitions("USA").unwrap();
+    let args = Cli::parse();
+
+    let competitions_html = match retrieve_competitions(&args.region) {
+        Ok(competitions_html) => competitions_html,
+        Err(e) => {
+            eprintln!("Error: {}", e);
+            return;
+        }
+    };
+    
+    let mut competitions = get_competitions(&competitions_html.as_str()).unwrap();
 
     // debug
     if false {
@@ -17,11 +40,10 @@ fn main() {
             println!();
         }
     }
+
     // Find competitions within a certain distance of a location
-    // For example, find competitions within 50 miles of Takoma Park, MD
-    let search_lat_long = (38.9779, -77.0075);
-    let distance_miles = 150.0;
-    let mut competitions_within_distance = find_competitions_within_distance(competitions.as_mut_slice(), search_lat_long, distance_miles);
+    let search_lat_long = parse_lat_long(&args.lat_long);
+    let mut competitions_within_distance = find_competitions_within_distance(competitions.as_mut_slice(), search_lat_long, args.distance);
 
     competitions_within_distance.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
     for (competition, distance) in competitions_within_distance {
@@ -33,12 +55,8 @@ fn main() {
 
 // This function will access the world cubing association.org website and scrape the competitions-list div
 // It will then parse the script tag inside the div to get the competitions and return the vector
-fn get_competitions(region: &str) -> Result<Vec<Competition>, Box<dyn Error>> {
-    let client = reqwest::blocking::Client::builder().build()?;
-    let res = client.get(format!("{}/competitions?region={}&search=&state=present&year=all+years&from_date=&to_date=&delegate=&display=map", WCA_BASE_URL, region))
-        .send()?
-        .text()?;
-    let document = Document::from(res.as_str());
+fn get_competitions(competitions_html: &str) -> Result<Vec<Competition>, Box<dyn Error>> {
+    let document = Document::from(competitions_html);
     // find the competitions-list div and then find the script tag inside it
     let mut competitions_script = document.find(Attr("id", "competitions-list").child(Name("script")));
     // get the text of the script tag
@@ -46,8 +64,6 @@ fn get_competitions(region: &str) -> Result<Vec<Competition>, Box<dyn Error>> {
 
     // parse the text of the script tag to get the competitions
     let competitions = competitions_script_text.split("var competitions = ").collect::<Vec<&str>>()[1].split(";\n").collect::<Vec<&str>>()[0];
-
-    // for each competition store the name, marker_date, latitude_degrees, and longitude_degrees
 
     // Create a vector to store the competitions
     let mut competition_vec = Vec::new();
@@ -97,6 +113,14 @@ fn get_competitions(region: &str) -> Result<Vec<Competition>, Box<dyn Error>> {
     Ok(competition_vec)
 }
 
+fn retrieve_competitions(region: &str) -> Result<String, Box<dyn Error>> {
+    let client = reqwest::blocking::Client::builder().build()?;
+    let res = client.get(format!("{}/competitions?region={}&search=&state=present&year=all+years&from_date=&to_date=&delegate=&display=map", WCA_BASE_URL, region))
+        .send()?
+        .text()?;
+    Ok(res)
+}
+
 fn haversine_distance(lat_long1: (f64, f64), lat_long2: (f64, f64)) -> f64 {
     let (lat1, lon1) = lat_long1;
     let (lat2, lon2) = lat_long2;
@@ -110,6 +134,7 @@ fn haversine_distance(lat_long1: (f64, f64), lat_long2: (f64, f64)) -> f64 {
 
 
 // This function will take a vector of competitions and a search location and return a vector of competitions within a certain distance of the search location
+// Shouldn't I rewrite this to return Some/None instead of Vec?
 fn find_competitions_within_distance(competitions: &mut [Competition], search_lat_long: (f64, f64), distance_miles: f64) -> Vec<(&Competition, f64)> {
     let mut competitions_within_distance: Vec<(&Competition, f64)> = Vec::new();
     for competition in competitions {

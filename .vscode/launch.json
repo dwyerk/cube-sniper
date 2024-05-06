@@ -7,7 +7,7 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'cube-sniper'",
+            "name": "Debug with command line arguments",
             "cargo": {
                 "args": [
                     "build",
@@ -19,7 +19,7 @@
                     "kind": "bin"
                 }
             },
-            "args": [],
+            "args": ["USA", "38.9779,-77.0075"],
             "cwd": "${workspaceFolder}"
         },
         {
