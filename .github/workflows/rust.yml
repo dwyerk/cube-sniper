@@ -27,7 +27,7 @@ jobs:
     - name: Clean docs folder
       run: cargo clean --doc
     - name: Build documentation
-      run: cargo doc --no-deps --document-private-items --document-hidden
+      run: cargo doc --no-deps --document-private-items
 
   deploy:
     name: Deploy Docs
