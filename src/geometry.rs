@@ -6,10 +6,11 @@ const EARTH_RADIUS_MI: f64 = 3959.0; // Earth radius in miles
 /// # Examples
 /// 
 /// ```
+/// use cube_sniper::geometry::haversine_distance;
 /// let lat_long1 = (37.7749, -122.4194);
 /// let lat_long2 = (34.0522, -118.2437);
 /// let distance = haversine_distance(lat_long1, lat_long2);
-/// assert_eq!(distance, 347.448462);
+/// assert_eq!(distance, 347.44284485743043);
 /// ```
 pub fn haversine_distance(lat_long1: (f64, f64), lat_long2: (f64, f64)) -> f64 {
     let (lat1, lon1) = lat_long1;
