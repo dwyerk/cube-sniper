@@ -34,6 +34,11 @@ jobs:
     - name: Build documentation
       run: cargo doc --no-deps --document-private-items
 
+    - name: Upload docs artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: target/doc
+
   deploy:
     name: Deploy Docs
     runs-on: ubuntu-latest
@@ -42,6 +47,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     steps:
-      - name: Upload artifact
+      - name: Upload docs to github pages
         id: deployment
         uses: actions/deploy-pages@v4
