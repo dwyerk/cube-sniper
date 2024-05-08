@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"43326a088c","applicationID":"10385163","transactionName":"dFheEERaWFwHFE1RX1pHVRBfQV1fDBVNW15TUkg=","queueTime":0,"applicationTime":102,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"43326a088c",applicationID:"10385163"};;/*! For license information please see nr-loader-rum-1.258.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={234:(e,t,r)=>{"use strict";r.d(t,{P_:()=>v,Mt:()=>b,C5:()=>s,OP:()=>k,lF:()=>P,Yu:()=>_,Dg:()=>m,CX:()=>c,GE:()=>w,sU:()=>N});var n=r(8632),i=r(9567);const o={beacon:n.ce.beacon,errorBeacon:n.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o);const r=(0,n.ek)(e);r&&(r.info=a[e])}const u=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var d=r(7056),l=r(50);const f="[data-nr-mask]",g=()=>{const e={mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{feature_flags:[],proxy:{assets:void 0,beacon:void 0},privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},metrics:{enabled:!0,autoStart:!0},page_action:{enabled:!0,harvestTimeSeconds:30,autoStart:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1,autoStart:!0},session_trace:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},harvest:{tooManyRequestsDelay:60},session_replay:{autoStart:!0,enabled:!1,harvestTimeSeconds:60,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,inline_stylesheet:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){u(t)?e.mask_selector="".concat(t,",").concat(f):""===t||null===t?e.mask_selector=f:(0,l.Z)("An invalid session_replay.mask_selector was provided. '*' will be used.",t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){u(t)?e.block_selector+=",".concat(t):""!==t&&(0,l.Z)("An invalid session_replay.block_selector was provided and will not be used",t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,l.Z)("An invalid session_replay.mask_input_option was provided and will not be used",t)}},spa:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},soft_navigations:{enabled:!0,harvestTimeSeconds:10,autoStart:!0}}},p={},h="All configuration objects require an agent identifier!";function v(e){if(!e)throw new Error(h);if(!p[e])throw new Error("Configuration for ".concat(e," was never set"));return p[e]}function m(e,t){if(!e)throw new Error(h);p[e]=(0,i.D)(t,g());const r=(0,n.ek)(e);r&&(r.init=p[e])}function b(e,t){if(!e)throw new Error(h);var r=v(e);if(r){for(var n=t.split("."),i=0;i<n.length-1;i++)if("object"!=typeof(r=r[n[i]]))return;r=r[n[n.length-1]]}return r}const y={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},A={};function w(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");A[e]=(0,i.D)(t,y);const r=(0,n.ek)(e);r&&(r.loader_config=A[e])}const _=(0,n.mF)().o;var E=r(385),x=r(6818);const D={buildEnv:x.Re,distMethod:x.gF,version:x.q4,originTime:E.sK},R={customTransaction:void 0,disabled:!1,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,onerror:void 0,origin:""+E._A.location,ptid:void 0,releaseIds:{},appMetadata:{},session:void 0,denyList:void 0,harvestCount:0,timeKeeper:void 0},S={};function k(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!S[e])throw new Error("Runtime for ".concat(e," was never set"));return S[e]}function N(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");S[e]={...(0,i.D)(t,R),...D};const r=(0,n.ek)(e);r&&(r.runtime=S[e])}function P(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,r)=>{"use strict";r.d(t,{D:()=>i});var n=r(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,n.Z)("Setting a Configurable requires a model to set its initial properties");const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.Z)("An error occurred while setting a property of a Configurable",e)}return r}catch(e){(0,n.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,r)=>{"use strict";r.d(t,{Re:()=>i,gF:()=>o,q4:()=>n});const n="1.258.0",i="PROD",o="CDN"},385:(e,t,r)=>{"use strict";r.d(t,{Nk:()=>d,Tt:()=>s,_A:()=>o,iS:()=>a,il:()=>n,sK:()=>l,ux:()=>c,v6:()=>i,w1:()=>u});const n="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=n?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean("hidden"===o?.document?.visibilityState),s=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),c=s&&"undefined"==typeof SharedWorker,u=((()=>{const e=o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Boolean(n&&window.document.documentMode)),d=!!o.navigator?.sendBeacon,l=Math.floor(Date.now()-performance.now())},1117:(e,t,r)=>{"use strict";r.d(t,{w:()=>o});var n=r(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,n.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,r]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=r)}))}catch(e){(0,n.Z)("An error occurred while setting SharedContext",e)}}}},8e3:(e,t,r)=>{"use strict";r.d(t,{LP:()=>l,RP:()=>c,o5:()=>u});var n=r(8325),i=r(1284),o=r(4322),a=r(3325);const s={};function c(e,t){const r={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,r)}function u(e,t){d(e),s[e].get(t)&&s[e].delete(t),s[e].size&&f(e)}function d(e){if(!e)throw new Error("agentIdentifier required");s[e]||(s[e]=new Map)}function l(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature",r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if(d(e),!e||!s[e].get(t)||r)return g(e,t);s[e].get(t).staged=!0,f(e)}function f(e){const t=[...s[e]];t.every((e=>{let[t,r]=e;return r.staged}))&&(t.sort(((e,t)=>e[1].priority-t[1].priority)),t.forEach((t=>{let[r]=t;s[e].delete(r),g(e,r)})))}function g(e,t){const r=e?n.ee.get(e):n.ee,a=o.X.handlers;if(r.backlog&&a){var s=r.backlog[t],c=a[t];if(c){for(var u=0;s&&u<s.length;++u)p(s[u],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,r){r[0].on(e,r[1])}))}))}r.isolatedBacklog||delete a[t],r.backlog[t]=null,r.emit("drain-"+t,[])}}function p(e,t){var r=e[1];(0,i.D)(t[r],(function(t,r){var n=e[0];if(r[0]===n){var i=r[1],o=e[3],a=e[2];i.apply(o,a)}}))}},8325:(e,t,r)=>{"use strict";r.d(t,{A:()=>c,ee:()=>u});var n=r(8632),i=r(2210),o=r(234);class a{constructor(e){this.contextId=e}}var s=r(3117);const c="nr@context:".concat(s.a),u=function e(t,r){var n={},s={},d={},l=!1;try{l=16===r.length&&(0,o.OP)(r).isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,o){!1!==o&&(o=!0);if(u.aborted&&!i)return;t&&o&&t.emit(e,r,n);for(var a=g(n),c=h(e),d=c.length,l=0;l<d;l++)c[l].apply(a,r);var p=m()[s[e]];p&&p.push([f,e,r,a]);return a},get:v,listeners:h,context:g,buffer:function(e,t){const r=m();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach((e=>{let[n,i]=e;s[i]=t,t in r||(r[t]=[])}))},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach((e=>{delete f.backlog[e]}))},isBuffering:function(e){return!!m()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function p(e,t){n[e]=h(e).concat(t)}function h(e){return n[e]||[]}function v(t){return d[t]=d[t]||e(f,t)}function m(){return f.backlog}}(void 0,"globalEE"),d=(0,n.fP)();d.ee||(d.ee=u)},5546:(e,t,r)=>{"use strict";r.d(t,{E:()=>n,p:()=>i});var n=r(8325).ee.get("handle");function i(e,t,r,i,o){o?(o.buffer([e],i),o.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},4322:(e,t,r)=>{"use strict";r.d(t,{X:()=>o});var n=r(5546);o.on=a;var i=o.handlers={};function o(e,t,r,o){a(o||n.E,i,e,t,r)}function a(e,t,r,i,o){o||(o="feature"),e||(e=n.E);var a=t[o]=t[o]||{};(a[r]=a[r]||[]).push([e,i])}},3239:(e,t,r)=>{"use strict";r.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var n=r(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};n._A.addEventListener("test",null,e),n._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(r,n))}function c(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(r,n))}},3117:(e,t,r)=>{"use strict";r.d(t,{a:()=>n});const n=(0,r(4402).Rl)()},4402:(e,t,r)=>{"use strict";r.d(t,{Rl:()=>a,ky:()=>s});var n=r(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n._A?.crypto||n._A?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map((e=>"x"===e?o(t,r++).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=n._A?.crypto||n._A?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var s=0;s<e;s++)a.push(o(r,i++).toString(16));return a.join("")}},7056:(e,t,r)=>{"use strict";r.d(t,{Bq:()=>n,Hb:()=>a,IK:()=>u,K4:()=>i,oD:()=>o,uT:()=>c,wO:()=>s});const n="NRBA",i="SESSION",o=144e5,a=18e5,s={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},u={OFF:0,FULL:1,ERROR:2}},7894:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{z:()=>n})},50:(e,t,r)=>{"use strict";function n(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}r.d(t,{Z:()=>n})},2825:(e,t,r)=>{"use strict";r.d(t,{N:()=>c,T:()=>s});var n=r(8325),i=r(385);const o="newrelic";const a=new Set,s={};function c(e,t){const r=n.ee.get(t);s[t]??={},e&&"object"==typeof e&&(a.has(t)||(r.emit("rumresp",[e]),s[t]=e,a.add(t),function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};try{i._A.dispatchEvent(new CustomEvent(o,{detail:e}))}catch(e){}}({loaded:!0})))}},2210:(e,t,r)=>{"use strict";r.d(t,{X:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},7872:(e,t,r)=>{"use strict";function n(e){var t=this;let r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:500,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};const i=n?.leading||!1;let o;return function(){for(var n=arguments.length,a=new Array(n),s=0;s<n;s++)a[s]=arguments[s];i&&void 0===o&&(e.apply(t,a),o=setTimeout((()=>{o=clearTimeout(o)}),r)),i||(clearTimeout(o),o=setTimeout((()=>{e.apply(t,a)}),r))}}function i(e){var t=this;let r=!1;return function(){if(!r){r=!0;for(var n=arguments.length,i=new Array(n),o=0;o<n;o++)i[o]=arguments[o];e.apply(t,i)}}}r.d(t,{D:()=>n,Z:()=>i})},1284:(e,t,r)=>{"use strict";r.d(t,{D:()=>n});const n=(e,t)=>Object.entries(e||{}).map((e=>{let[r,n]=e;return t(r,n)}))},4351:(e,t,r)=>{"use strict";r.d(t,{P:()=>o});var n=r(8325);const i=()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,r)=>{"use strict";r.d(t,{KB:()=>a,b2:()=>o});var n=r(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,n.bP)("load",e,t)}function a(e){if(i())return e();(0,n.iz)("DOMContentLoaded",e)}},8632:(e,t,r)=>{"use strict";r.d(t,{EZ:()=>d,ce:()=>o,ek:()=>u,fP:()=>a,gG:()=>l,h5:()=>c,mF:()=>s});var n=r(385),i=r(7894);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return n._A.NREUM||(n._A.NREUM={}),void 0===n._A.newrelic&&(n._A.newrelic=n._A.NREUM),n._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:n._A.setTimeout,SI:n._A.setImmediate,CT:n._A.clearTimeout,XHR:n._A.XMLHttpRequest,REQ:n._A.Request,EV:n._A.Event,PR:n._A.Promise,MO:n._A.MutationObserver,FETCH:n._A.fetch}),e}function c(e,t){let r=a();r.initializedAgents??={},t.initializedAt={ms:(0,i.z)(),date:new Date},r.initializedAgents[e]=t}function u(e){let t=a();return t.initializedAgents?.[e]}function d(e,t){a()[e]=t}function l(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},7956:(e,t,r)=>{"use strict";r.d(t,{N:()=>i});var n=r(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],r=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;(0,n.iz)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),r,i)}},3081:(e,t,r)=>{"use strict";r.d(t,{gF:()=>o,mY:()=>i,t9:()=>n,vz:()=>s,xS:()=>a});const n=r(3325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},7633:(e,t,r)=>{"use strict";r.d(t,{t:()=>n});const n=r(3325).D.pageViewEvent},9251:(e,t,r)=>{"use strict";r.d(t,{t:()=>n});const n=r(3325).D.pageViewTiming},7144:(e,t,r)=>{"use strict";r.d(t,{Ef:()=>i});var n=r(7056);r(3325).D.sessionReplay;const i={RECORD:"recordReplay",PAUSE:"pauseReplay",REPLAY_RUNNING:"replayRunning",ERROR_DURING_REPLAY:"errorDuringReplay"};n.IK.ERROR,n.IK.FULL,n.IK.OFF},5938:(e,t,r)=>{"use strict";r.d(t,{W:()=>i});var n=r(8325);class i{constructor(e,t,r){this.agentIdentifier=e,this.aggregator=t,this.ee=n.ee.get(e),this.featureName=r,this.blocked=!1}}},2758:(e,t,r)=>{"use strict";r.d(t,{j:()=>E});var n=r(3325),i=r(234),o=r(5546),a=r(8325),s=r(8e3),c=r(3960),u=r(385),d=r(50),l=r(3081),f=r(8632),g=r(7144);const p=["setErrorHandler","finished","addToTrace","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion","start","recordReplay","pauseReplay",g.Ef.RECORD,g.Ef.PAUSE],h=["setErrorHandler","finished","addToTrace","addRelease"];var v=r(7894),m=r(7056);function b(){const e=(0,f.gG)();p.forEach((t=>{e[t]=function(){for(var r=arguments.length,n=new Array(r),i=0;i<r;i++)n[i]=arguments[i];return function(t){for(var r=arguments.length,n=new Array(r>1?r-1:0),i=1;i<r;i++)n[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...n))})),o.length>1?o:o[0]}(t,...n)}}))}const y={};var A=r(2825);const w=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};let _=!1;function E(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},p=arguments.length>2?arguments[2]:void 0,E=arguments.length>3?arguments[3]:void 0,{init:x,info:D,loader_config:R,runtime:S={loaderType:p},exposed:k=!0}=t;const N=(0,f.gG)();D||(x=N.init,D=N.info,R=N.loader_config),(0,i.Dg)(e.agentIdentifier,x||{}),(0,i.GE)(e.agentIdentifier,R||{}),D.jsAttributes??={},u.v6&&(D.jsAttributes.isWorker=!0),(0,i.CX)(e.agentIdentifier,D);const P=(0,i.P_)(e.agentIdentifier),j=[D.beacon,D.errorBeacon];_||(P.proxy.assets&&(w(P.proxy.assets),j.push(P.proxy.assets)),P.proxy.beacon&&j.push(P.proxy.beacon),b(),(0,f.EZ)("activatedFeatures",A.T),e.runSoftNavOverSpa&&=!0===P.soft_navigations.enabled&&P.feature_flags.includes("soft_nav")),S.denyList=[...P.ajax.deny_list||[],...P.ajax.block_internal?j:[]],(0,i.sU)(e.agentIdentifier,S),void 0===e.api&&(e.api=function(e,t){let f=arguments.length>2&&void 0!==arguments[2]&&arguments[2];t||(0,s.RP)(e,"api");const p={};var b=a.ee.get(e),A=b.get("tracer");y[e]=m.IK.OFF,b.on(g.Ef.REPLAY_RUNNING,(t=>{y[e]=t}));var w="api-",_=w+"ixn-";function E(t,r,n,o){const a=(0,i.C5)(e);return null===r?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:r}}),R(w,n,!0,o||null===r?"session":void 0)(t,r)}function x(){}h.forEach((e=>{p[e]=R(w,e,!0,"api")})),p.addPageAction=R(w,"addPageAction",!0,n.D.pageAction),p.setPageViewName=function(t,r){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(r||"http://custom.transaction")+t,R(w,"setPageViewName",!0)()},p.setCustomAttribute=function(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number","boolean"].includes(typeof t)||null===t)return E(e,t,"setCustomAttribute",r);(0,d.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string, number or boolean type, but a type of <".concat(typeof t,"> was provided."))}else(0,d.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},p.setUserId=function(e){if("string"==typeof e||null===e)return E("enduser.id",e,"setUserId",!0);(0,d.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},p.setApplicationVersion=function(e){if("string"==typeof e||null===e)return E("application.version",e,"setApplicationVersion",!1);(0,d.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},p.start=e=>{try{const t=e?"defined":"undefined";(0,o.p)(l.xS,["API/start/".concat(t,"/called")],void 0,n.D.metrics,b);const r=Object.values(n.D);if(void 0===e)e=r;else{if((e=Array.isArray(e)&&e.length?e:[e]).some((e=>!r.includes(e))))return(0,d.Z)("Invalid feature name supplied. Acceptable feature names are: ".concat(r));e.includes(n.D.pageViewEvent)||e.push(n.D.pageViewEvent)}e.forEach((e=>{b.emit("".concat(e,"-opt-in"))}))}catch(e){(0,d.Z)("An unexpected issue occurred",e)}},p[g.Ef.RECORD]=function(){(0,o.p)(l.xS,["API/recordReplay/called"],void 0,n.D.metrics,b),(0,o.p)(g.Ef.RECORD,[],void 0,n.D.sessionReplay,b)},p[g.Ef.PAUSE]=function(){(0,o.p)(l.xS,["API/pauseReplay/called"],void 0,n.D.metrics,b),(0,o.p)(g.Ef.PAUSE,[],void 0,n.D.sessionReplay,b)},p.interaction=function(e){return(new x).get("object"==typeof e?e:{})};const D=x.prototype={createTracer:function(e,t){var r={},i=this,a="function"==typeof t;return(0,o.p)(l.xS,["API/createTracer/called"],void 0,n.D.metrics,b),f||(0,o.p)(_+"tracer",[(0,v.z)(),e,r],i,n.D.spa,b),function(){if(A.emit((a?"":"no-")+"fn-start",[(0,v.z)(),i,a],r),a)try{return t.apply(this,arguments)}catch(e){throw A.emit("fn-err",[arguments,this,e],r),e}finally{A.emit("fn-end",[(0,v.z)()],r)}}}};function R(e,t,r,i){return function(){return(0,o.p)(l.xS,["API/"+t+"/called"],void 0,n.D.metrics,b),i&&(0,o.p)(e+t,[(0,v.z)(),...arguments],r?null:this,i,b),r?void 0:this}}function S(){r.e(75).then(r.bind(r,7438)).then((t=>{let{setAPI:r}=t;r(e),(0,s.LP)(e,"api")})).catch((()=>{(0,d.Z)("Downloading runtime APIs failed..."),b.abort()}))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{D[e]=R(_,e,void 0,f?n.D.softNav:n.D.spa)})),p.setCurrentRouteName=f?R(_,"routeName",void 0,n.D.softNav):R(w,"routeName",!0,n.D.spa),p.noticeError=function(t,r){"string"==typeof t&&(t=new Error(t)),(0,o.p)(l.xS,["API/noticeError/called"],void 0,n.D.metrics,b),(0,o.p)("err",[t,(0,v.z)(),!1,r,!!y[e]],void 0,n.D.jserrors,b)},u.il?(0,c.b2)((()=>S()),!0):S(),p}(e.agentIdentifier,E,e.runSoftNavOverSpa)),void 0===e.exposed&&(e.exposed=k),_=!0}},8993:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},3325:(e,t,r)=>{"use strict";r.d(t,{D:()=>n,p:()=>i});const n={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations",spa:"spa"},i={[n.pageViewEvent]:1,[n.pageViewTiming]:2,[n.metrics]:3,[n.jserrors]:4,[n.ajax]:5,[n.sessionTrace]:6,[n.pageAction]:7,[n.spa]:8,[n.softNav]:9,[n.sessionReplay]:10}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var o=n[e]={exports:{}};return r[e](o,o.exports,i),o.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,r)=>(i.f[r](e,t),t)),[])),i.u=e=>"nr-rum-1.258.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.258.0.PROD:",i.l=(r,n,o,a)=>{if(e[r])e[r].push(n);else{var s,c;if(void 0!==o)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+o){s=l;break}}if(!s){c=!0;var f={75:"sha512-dbRQ0U/DzQ6bR/LVo1bSCjmtT4Mn+TUoByqFctqWrjwdLoHvi/Uhr3w190Zk5FuNMJFjPV0z6jQVNhQGb0DrLQ=="};(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=r,0!==s.src.indexOf(window.location.origin+"/")&&(s.crossOrigin="anonymous"),f[a]&&(s.integrity=f[a])}e[r]=[n];var g=(t,n)=>{s.onerror=s.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(n))),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=g.bind(null,s.onerror),s.onload=g.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var o=new Promise(((r,i)=>n=e[t]=[r,i]));r.push(n[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var o=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,n[1](s)}}),"chunk-"+t,t)}};var t=(t,r)=>{var n,o,[a,s,c]=r,u=0;if(a.some((t=>0!==e[t]))){for(n in s)i.o(s,n)&&(i.m[n]=s[n]);if(c)c(i)}for(t&&t(r);u<a.length;u++)o=a[u],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},r=self["webpackChunk:NRBA-1.258.0.PROD"]=self["webpackChunk:NRBA-1.258.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8993);var e=i(50),t=i(7144),r=i(4402);class n{agentIdentifier;constructor(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:(0,r.ky)(16);this.agentIdentifier=e}#e(t){for(var r=arguments.length,n=new Array(r>1?r-1:0),i=1;i<r;i++)n[i-1]=arguments[i];if("function"==typeof this.api?.[t])return this.api[t](...n);(0,e.Z)("Call to agent api ".concat(t," failed. The API is not currently initialized."))}addPageAction(e,t){return this.#e("addPageAction",e,t)}setPageViewName(e,t){return this.#e("setPageViewName",e,t)}setCustomAttribute(e,t,r){return this.#e("setCustomAttribute",e,t,r)}noticeError(e,t){return this.#e("noticeError",e,t)}setUserId(e){return this.#e("setUserId",e)}setApplicationVersion(e){return this.#e("setApplicationVersion",e)}setErrorHandler(e){return this.#e("setErrorHandler",e)}finished(e){return this.#e("finished",e)}addRelease(e,t){return this.#e("addRelease",e,t)}start(e){return this.#e("start",e)}recordReplay(){return this.#e(t.Ef.RECORD)}pauseReplay(){return this.#e(t.Ef.PAUSE)}addToTrace(e){return this.#e("addToTrace",e)}setCurrentRouteName(e){return this.#e("setCurrentRouteName",e)}interaction(){return this.#e("interaction")}}var o=i(3325),a=i(234);const s=Object.values(o.D);function c(e){const t={};return s.forEach((r=>{t[r]=function(e,t){return!0===(0,a.Mt)(t,"".concat(e,".enabled"))}(r,e)})),t}var u=i(2758);var d=i(8e3),l=i(5938),f=i(3960),g=i(385);function p(e){return g.il&&!0===(0,a.Mt)(e,"privacy.cookies_enabled")}function h(e){return!!a.Yu.MO&&p(e)&&!0===(0,a.Mt)(e,"session_trace.enabled")}var v=i(7872);class m extends l.W{constructor(e,t,r){let n=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,r),this.auto=n,this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,!1===(0,a.Mt)(this.agentIdentifier,"".concat(this.featureName,".autoStart"))&&(this.auto=!1),this.auto?(0,d.RP)(e,r):this.ee.on("".concat(this.featureName,"-opt-in"),(0,v.Z)((()=>{(0,d.RP)(this.agentIdentifier,this.featureName),this.auto=!0,this.importAggregator()})))}importAggregator(){let t,r=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;this.onAggregateImported=new Promise((e=>{t=e}));const n=async()=>{let n;try{if(p(this.agentIdentifier)){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,7920));n=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t),this.featureName===o.D.sessionReplay&&this.abortHandler?.()}try{if(!this.#t(this.featureName,n))return(0,d.LP)(this.agentIdentifier,this.featureName),void t(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,8582)),{Aggregate:o}=await e(this.featureName,"aggregate");this.featAggregate=new o(this.agentIdentifier,this.aggregator,r),t(!0)}catch(r){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),r),this.abortHandler?.(),(0,d.LP)(this.agentIdentifier,this.featureName,!0),t(!1),this.ee&&this.ee.abort()}};g.il?(0,f.b2)((()=>n()),!0):n()}#t(e,t){return e!==o.D.sessionReplay||(r=this.agentIdentifier,n=t,!(!h(r)||!n?.isNew&&!n?.state.sessionReplayMode));var r,n}}var b=i(7633);class y extends m{static featureName=b.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,b.t,r),this.importAggregator()}}var A=i(1117),w=i(1284);class _ extends A.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,r,n,i){var o=this.getBucket(e,t,r,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,w.D)(e,(function(e,r){t[e]=E(r,t[e])})),t}(n,o.metrics),o}merge(e,t,r,n,i){var o=this.getBucket(e,t,n,i);if(o.metrics){var a=o.metrics;a.count+=r.count,(0,w.D)(r,(function(e,t){if("count"!==e){var n=a[e],i=r[e];i&&!i.c?a[e]=E(i.t,n):a[e]=function(e,t){if(!t)return e;t.c||(t=x(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=r}storeMetric(e,t,r,n){var i=this.getBucket(e,t,r);return i.stats=E(n,i.stats),i}getBucket(e,t,r,n){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:r||{}},n&&(i.custom=n)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},r="",n=!1,i=0;i<e.length;i++)t[r=e[i]]=Object.values(this.aggregatedData[r]||{}),t[r].length&&(n=!0),delete this.aggregatedData[r];return n?t:null}}function E(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=x(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function x(e){return{t:e,min:e,max:e,sos:e*e,c:1}}var D=i(8632),R=i(4351);var S=i(5546),k=i(7956),N=i(3239),P=i(9251),j=i(7894);class T extends m{static featureName=P.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t,r),g.il&&((0,k.N)((()=>(0,S.p)("docHidden",[(0,j.z)()],void 0,P.t,this.ee)),!0),(0,N.bP)("pagehide",(()=>(0,S.p)("winPagehide",[(0,j.z)()],void 0,P.t,this.ee))),this.importAggregator())}}var I=i(3081);class O extends m{static featureName=I.t9;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,r),this.importAggregator()}}new class extends n{constructor(t,r){super(r),g._A?(this.sharedAggregator=new _({agentIdentifier:this.agentIdentifier}),this.features={},(0,D.h5)(this.agentIdentifier,this),this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(y),this.runSoftNavOverSpa=[...this.desiredFeatures].some((e=>e.featureName===o.D.softNav)),(0,u.j)(this,t,t.loaderType||"agent"),this.run()):(0,e.Z)("Failed to initialize the agent. Could not determine the runtime environment.")}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}run(){try{const t=c(this.agentIdentifier),r=[...this.desiredFeatures];r.sort(((e,t)=>o.p[e.featureName]-o.p[t.featureName])),r.forEach((r=>{if(!t[r.featureName]&&r.featureName!==o.D.pageViewEvent)return;if(this.runSoftNavOverSpa&&r.featureName===o.D.spa)return;if(!this.runSoftNavOverSpa&&r.featureName===o.D.softNav)return;const n=function(e){switch(e){case o.D.ajax:return[o.D.jserrors];case o.D.sessionTrace:return[o.D.ajax,o.D.pageViewEvent];case o.D.sessionReplay:return[o.D.sessionTrace];case o.D.pageViewTiming:return[o.D.pageViewEvent];default:return[]}}(r.featureName);n.every((e=>e in this.features))||(0,e.Z)("".concat(r.featureName," is enabled but one or more dependent features has not been initialized (").concat((0,R.P)(n),"). This may cause unintended consequences or missing data...")),this.features[r.featureName]=new r(this.agentIdentifier,this.sharedAggregator)}))}catch(t){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",t);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,D.fP)();delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return r.ee.get(this.agentIdentifier).abort(),!1}}}({features:[y,T,O],loaderType:"lite"})})()})();</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="icon" type="image/x-icon" href="/assets/wca-265402a0057fbe60b55c0ed315bf52593f022a997d08981bb26ad655029abec4.ico" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href='/assets/android-touch-icon-5224e06e84e6181aef4c5975e8485cc803ae05aa889748e40b572d6b5bb7c401.png'/>
+  <link rel="apple-touch-icon" href='/assets/apple-touch-icon-b8bc6cc441a0ab8970dbacd62651a13d557ff9bcef2fa8ce3b832e50fd54b9b7.png'/>
+
+  <meta name="og:image" content='https://www.worldcubeassociation.org/assets/og-wca_logo-d7533638dbb753b45e9969280ca4c13215fdb53774a27a451164066a016b2190.png'/>
+
+  <meta name="description" content="The World Cube Association governs competitions for mechanical puzzles that are operated by twisting groups of pieces, commonly known as 'twisty puzzles'. The most famous of these puzzles is the Rubik's Cube, invented by professor Rubik from Hungary. A selection of these puzzles are chosen as official events of the WCA.">
+
+  <title>Competitions | World Cube Association</title>
+  <script>
+    window.wca = {
+      currentLocale: 'en',
+    };
+  </script>
+
+    <link rel="stylesheet" href="/assets/application-104daffa3b320a58f11016d47fee1fb960924ba3213bbfc5e882be55bc27d571.css" media="all" />
+
+
+
+  <script src="/packs/js/runtime-7938f75aaf6de578850c.js"></script>
+<script src="/packs/js/jquery-67644508c82866575bb3.js"></script>
+<script src="/packs/js/vendor-840231f5ebc79c0cd90e.js"></script>
+<script src="/packs/js/347-28f7bd8610cbcaa720eb.js"></script>
+<script src="/packs/js/631-e366f9e35052db9e099e.js"></script>
+<script src="/packs/js/924-c2bc3cf8e3369d02bb25.js"></script>
+<script src="/packs/js/127-a422b96ea63a18b084a2.js"></script>
+<script src="/packs/js/441-9fc4b8b50be30949f5ff.js"></script>
+<script src="/packs/js/259-45e6113c0436794e5eb7.js"></script>
+<script src="/packs/js/460-484b599f8e0a6154c95b.js"></script>
+<script src="/packs/js/995-cfbbaa874e266dc77cad.js"></script>
+<script src="/packs/js/application-cc91946f14e800cb04b6.js"></script>
+<script src="/packs/js/global_styles-3494d31d7b6c2edd73eb.js"></script>
+<script src="/packs/js/i18n-d525f05e564d30e849fc.js"></script>
+<script src="/packs/js/wca_maps-8fb4fcf2c039015e2dc3.js"></script>
+<script src="/packs/js/lodash_utils-76cdc819df7c5435bbb0.js"></script>
+  <link rel="stylesheet" href="/packs/css/216-36035357.css" />
+<link rel="stylesheet" href="/packs/css/272-5854f64f.css" />
+<link rel="stylesheet" href="/packs/css/347-504d8c99.css" />
+<link rel="stylesheet" href="/packs/css/773-883c42c5.css" />
+<link rel="stylesheet" href="/packs/css/949-5e891e66.css" />
+
+    <script src="/assets/application-90b4c296a73cc012ae0929786e2ed3b73d0afc43970a55421bb872a75a648c56.js"></script>
+
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="z_CE3qllrSpW9xWuUnnEDyyM4UZRyBbbb0AnJWNgrMe6Y16jyPQd2VNuJq4HluFmDc0vAlN6ZXUb3qkt87tJsg" />
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.worldcubeassociation.org/rss.xml" />
+    <script data-ad-client="ca-pub-8682718775826560" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Legacy GA property still active for transitioning numbers -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41256017-1', 'auto');
+      ga("set", "anonymizeIp", true);
+      ga('send', 'pageview');
+    </script>
+    <!-- New Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB1H9R123K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QB1H9R123K', { 'anonymize_ip': true });
+    </script>
+</head>
+<body data-rails-controller-name="competitions" data-rails-controller-action-name="index">
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="brand">
+    <a href="/" ><img src="/assets/WCA Logo 2020-061de52e4072abad5c277eb08f333316d1ff9133c14fc061e61f291c6c1547f7.svg" /></a>
+  </div>
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <div class="navbar-collapse collapse disabled">
+    <ul class="nav navbar-nav">
+      <li class="top-nav logo">
+        <a href="/"><img src="/assets/WCA Logo 2020-061de52e4072abad5c277eb08f333316d1ff9133c14fc061e61f291c6c1547f7.svg" /></a>
+      </li>
+      <li class="dropdown ">
+        <a href="#" class="dropdown-toggle top-nav" data-toggle="dropdown" data-hover="dropdown">
+          <i class="icon info circle "></i> <span class="hidden-sm hidden-md">Information</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="/about"><i class="icon file alternate "></i> About the WCA</a></li>
+          <li><a href="/documents"><i class="icon copy "></i> WCA Documents</a></li>
+          <li><a href="/officers-and-board"><i class="icon sitemap "></i> WCA Officers &amp; Board</a></li>
+          <li><a href="/delegates"><i class="icon sitemap "></i> WCA Delegates</a></li>
+          <li><a href="/teams-committees-councils"><i class="icon id card "></i> Teams, Committees, and Councils</a></li>
+          <li><a href="/organizations"><i class="icon flag "></i> Regional Organizations</a></li>
+          <li><a href="/translators"><i class="icon language "></i> Translators</a></li>
+          <li class="divider"></li>
+          <li><a href="/faq"><i class="icon question circle "></i> Frequently Asked Questions</a></li>
+          <li><a href="/education"><i class="icon graduation cap "></i> Educational resources</a></li>
+          <li><a href="/contact"><i class="icon envelope "></i> Contact</a></li>
+          <li><a href="/speedcubing-history"><i class="icon history "></i> Speedcubing History</a></li>
+          <li><a href="/media-instagram"><i class="icon camera "></i> Media Submission</a></li>
+          <li><a href="/privacy"><i class="icon user secret "></i> Privacy</a></li>
+          <li><a href="/disclaimer"><i class="icon exclamation circle "></i> Disclaimer</a></li>
+          <li class="divider"></li>
+          <li><a href="/score-tools"><i class="icon wrench "></i> Tools</a></li>
+          <li><a href="/logo"><i><img width="16px" src="/assets/wca_logo-41cd768448a524cacae8d064cccd913bfd4bf08c9c30fd79cd63a6052a3525a8.svg" /></i> Logo</a></li>
+        </ul>
+      </li>
+      <li class="dropdown active">
+        <a href="#" class="dropdown-toggle top-nav" data-toggle="dropdown" data-hover="dropdown">
+          <i class="icon cube "></i><span class="hidden-sm hidden-md"> Competitions</span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="/competitions"><i class="icon globe "></i> All</a></li>
+          <li><a href="/competitions/mine"><i class="icon list "></i> My Competitions</a></li>
+        </ul>
+      </li>
+      <li class="dropdown ">
+        <a href="#" class="dropdown-toggle top-nav" data-toggle="dropdown" data-hover="dropdown">
+          <i class="icon list ol "></i>
+          <span class="hidden-sm hidden-md">Results</span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="/results/rankings/333/single"><i class="icon signal fa-rotate-90"></i> Rankings</a></li>
+          <li><a href="/results/records"><i class="icon trophy "></i> Records</a></li>
+          <li><a href="/persons"><i class="icon users "></i> Persons</a></li>
+          <li class="divider"></li>
+          <li><a href="https://statistics.worldcubeassociation.org/"><i class="icon chart area "></i> Statistics</a></li>
+          <li><a href="/media"><i class="icon film "></i> Multimedia</a></li>
+          <li class="divider"></li>
+          <li><a href="/export/results"><i class="icon download "></i> Results Export</a></li>
+          <li><a href="/export/developer"><i class="icon computer "></i> Developer Export</a></li>
+        </ul>
+      </li>
+      <li class="dropdown ">
+        <a href="#" class="dropdown-toggle top-nav" data-toggle="dropdown" data-hover="dropdown">
+          <i class="icon book "></i> <span class="hidden-sm hidden-md">Regulations</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="/regulations/about"><i class="icon info circle "></i> About the Regulations</a></li>
+          <li class="divider"></li>
+          <li><a href="/regulations/"><i class="icon book "></i> Regulations</a></li>
+          <li><a href="/regulations/guidelines.html"><i class="icon sticky note "></i> Guidelines</a></li>
+          <li><a href="/regulations/scrambles/"><i class="icon random "></i> Scrambles</a></li>
+          <li>
+            <a href="/incidents">
+              <i class="icon balance scale "></i> Incidents log
+</a>          </li>
+          <li>
+            <a href="/disciplinary">
+              <i class="icon bullhorn "></i> Disciplinary log
+</a>          </li>
+          <li class="divider"></li>
+          <li><a href="/regulations/history/"><i class="icon history "></i> History</a></li>
+          <li><a href="/regulations/translations/"><i class="icon language "></i> Translations</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle top-nav" data-toggle="dropdown" data-hover="dropdown">
+          <i class="icon paper plane "></i> <span class="hidden-sm hidden-md">Find us</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a target="_blank" class="hide-new-window-icon" href="https://www.instagram.com/thewcaofficial/">
+              <i class="icon instagram "></i> Instagram
+</a>          </li>
+          <li>
+            <a target="_blank" class="hide-new-window-icon" href="https://www.facebook.com/WorldCubeAssociation/">
+              <i class="icon facebook square "></i> Facebook
+</a>          </li>
+          <li>
+            <a target="_blank" class="hide-new-window-icon" href="https://www.twitter.com/theWCAofficial/">
+              <i class="icon twitter "></i> Twitter
+</a>          </li>
+          <li>
+            <a target="_blank" class="hide-new-window-icon" href="https://www.reddit.com/r/TheWCAOfficial/">
+              <i class="icon reddit "></i> Reddit
+</a>          </li>
+          <li>
+            <a target="_blank" class="hide-new-window-icon" href="https://www.twitch.tv/worldcubeassociation/">
+              <i class="icon twitch "></i> Twitch
+</a>          </li>
+          <li>
+            <a target="_blank" class="hide-new-window-icon" href="https://www.weibo.com/theWCA/">
+              <i class="icon weibo "></i> Weibo
+</a>          </li>
+          <li>
+            <a target="_blank" class="hide-new-window-icon" href="https://www.youtube.com/channel/UC5OUMUnS8PvY1RvtB1pQZ0g">
+              <i class="icon youtube "></i> YouTube
+</a>          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://forum.worldcubeassociation.org/" target="_blank" class="top-nav hide-new-window-icon">
+          <i class="icon comments "></i>
+          <span class="visible-lg-inline visible-xs-inline">Forum</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://live.worldcubeassociation.org/" target="_blank" class="top-nav hide-new-window-icon">
+          <i class="icon sort numeric down "></i>
+          <span class="visible-lg-inline visible-xs-inline">WCA Live</span>
+        </a>
+      </li>
+    </ul>
+
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="search-container my-2 my-lg-0">
+        <div data-react-class="SearchWidget" data-react-props="{}" data-react-cache-id="SearchWidget-0" id="omnisearch-form"></div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle top-nav" data-toggle="dropdown" data-hover="dropdown">
+          <i class="icon language "></i>
+          <span class="visible-lg-inline visible-xs-inline">English</span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" id="locale-selector" role="menu">
+            <li class="active">
+              <a href="/update_locale/en">
+                English
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/ca">
+                Català
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/cs">
+                Čeština
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/da">
+                Dansk
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/de">
+                Deutsch
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/eo">
+                Esperanto
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/es">
+                Español
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/fi">
+                Suomi
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/fr">
+                Français
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/hr">
+                Hrvatski
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/hu">
+                Magyar
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/id">
+                Bahasa Indonesia
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/it">
+                Italiano
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/ja">
+                日本語
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/kk">
+                Қазақша
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/ko">
+                한국어
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/nl">
+                Nederlands
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/pl">
+                Polski
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/pt">
+                Português Europeu
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/pt-BR">
+                Português Brasileiro
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/ro">
+                Română
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/ru">
+                Русский
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/sk">
+                Slovenský
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/sl">
+                Slovensko
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/sv">
+                Svenska
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/th">
+                ภาษาไทย
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/uk">
+                Українська
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/vi">
+                Tiếng Việt
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/zh-CN">
+                简体中文
+</a>            </li>
+            <li class="">
+              <a href="/update_locale/zh-TW">
+                繁體中文
+</a>            </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle top-nav" data-toggle="dropdown" data-hover="dropdown">
+            Sign in
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a class="top-nav" href="/users/sign_in">Sign in</a></li>
+            <li class="divider"></li>
+            <li><a href="/users/sign_up">Sign up</a></li>
+            <li><a href="/users/confirmation/new">Didn&#39;t receive confirmation instructions?</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!--/.nav-collapse -->
+</div>
+
+
+  <main>
+    <div id="flash-alerts" class="container">
+</div>
+
+
+    <div class="container">
+      
+    </div>
+
+    
+  <div class="container">
+    <h2>Competitions</h2>
+
+    <form class="competition-select form-inline map" id="competition-query-form" action="/competitions" accept-charset="UTF-8" data-remote="true" method="get">
+      <div class="form-group">
+  <label for="events">
+    Events
+    <button type="button" id="select-all-events" class="btn btn-primary btn-xs">All</button>
+    <button type="button" id="clear-all-events" class="btn btn-default btn-xs">Clear</button>
+</label>  <div id="events">
+    <span class="event-checkbox">
+      <label for="checkbox-333">
+        <input type="checkbox" name="event_ids[]" id="checkbox-333" value="333" />
+        <i data-toggle="tooltip" data-placement="top" title="3x3x3 Cube" class=" cubing-icon icon event-333"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-222">
+        <input type="checkbox" name="event_ids[]" id="checkbox-222" value="222" />
+        <i data-toggle="tooltip" data-placement="top" title="2x2x2 Cube" class=" cubing-icon icon event-222"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-444">
+        <input type="checkbox" name="event_ids[]" id="checkbox-444" value="444" />
+        <i data-toggle="tooltip" data-placement="top" title="4x4x4 Cube" class=" cubing-icon icon event-444"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-555">
+        <input type="checkbox" name="event_ids[]" id="checkbox-555" value="555" />
+        <i data-toggle="tooltip" data-placement="top" title="5x5x5 Cube" class=" cubing-icon icon event-555"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-666">
+        <input type="checkbox" name="event_ids[]" id="checkbox-666" value="666" />
+        <i data-toggle="tooltip" data-placement="top" title="6x6x6 Cube" class=" cubing-icon icon event-666"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-777">
+        <input type="checkbox" name="event_ids[]" id="checkbox-777" value="777" />
+        <i data-toggle="tooltip" data-placement="top" title="7x7x7 Cube" class=" cubing-icon icon event-777"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-333bf">
+        <input type="checkbox" name="event_ids[]" id="checkbox-333bf" value="333bf" />
+        <i data-toggle="tooltip" data-placement="top" title="3x3x3 Blindfolded" class=" cubing-icon icon event-333bf"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-333fm">
+        <input type="checkbox" name="event_ids[]" id="checkbox-333fm" value="333fm" />
+        <i data-toggle="tooltip" data-placement="top" title="3x3x3 Fewest Moves" class=" cubing-icon icon event-333fm"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-333oh">
+        <input type="checkbox" name="event_ids[]" id="checkbox-333oh" value="333oh" />
+        <i data-toggle="tooltip" data-placement="top" title="3x3x3 One-Handed" class=" cubing-icon icon event-333oh"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-clock">
+        <input type="checkbox" name="event_ids[]" id="checkbox-clock" value="clock" />
+        <i data-toggle="tooltip" data-placement="top" title="Clock" class=" cubing-icon icon event-clock"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-minx">
+        <input type="checkbox" name="event_ids[]" id="checkbox-minx" value="minx" />
+        <i data-toggle="tooltip" data-placement="top" title="Megaminx" class=" cubing-icon icon event-minx"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-pyram">
+        <input type="checkbox" name="event_ids[]" id="checkbox-pyram" value="pyram" />
+        <i data-toggle="tooltip" data-placement="top" title="Pyraminx" class=" cubing-icon icon event-pyram"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-skewb">
+        <input type="checkbox" name="event_ids[]" id="checkbox-skewb" value="skewb" />
+        <i data-toggle="tooltip" data-placement="top" title="Skewb" class=" cubing-icon icon event-skewb"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-sq1">
+        <input type="checkbox" name="event_ids[]" id="checkbox-sq1" value="sq1" />
+        <i data-toggle="tooltip" data-placement="top" title="Square-1" class=" cubing-icon icon event-sq1"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-444bf">
+        <input type="checkbox" name="event_ids[]" id="checkbox-444bf" value="444bf" />
+        <i data-toggle="tooltip" data-placement="top" title="4x4x4 Blindfolded" class=" cubing-icon icon event-444bf"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-555bf">
+        <input type="checkbox" name="event_ids[]" id="checkbox-555bf" value="555bf" />
+        <i data-toggle="tooltip" data-placement="top" title="5x5x5 Blindfolded" class=" cubing-icon icon event-555bf"></i>
+</label>    </span>
+    <span class="event-checkbox">
+      <label for="checkbox-333mbf">
+        <input type="checkbox" name="event_ids[]" id="checkbox-333mbf" value="333mbf" />
+        <i data-toggle="tooltip" data-placement="top" title="3x3x3 Multi-Blind" class=" cubing-icon icon event-333mbf"></i>
+</label>    </span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="Region">Region</label>
+  <select name="region" id="region" class="form-control"><option value="all">All regions</option><optgroup label="Continent"><option value="_Africa">Africa</option>
+<option value="_Asia">Asia</option>
+<option value="_Europe">Europe</option>
+<option value="_Multiple Continents">Multiple Continents</option>
+<option value="_North America">North America</option>
+<option value="_Oceania">Oceania</option>
+<option value="_South America">South America</option></optgroup><optgroup label="Region"><option value="Afghanistan">Afghanistan</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia">Bolivia</option>
+<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+<option value="Botswana">Botswana</option>
+<option value="Brazil">Brazil</option>
+<option value="Brunei">Brunei</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<option value="Cabo Verde">Cabo Verde</option>
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Taiwan">Chinese Taipei</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote d_Ivoire">Côte d&#39;Ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Democratic People_s Republic of Korea">Democratic People&#39;s Republic of Korea</option>
+<option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Eswatini">Eswatini</option>
+<option value="Ethiopia">Ethiopia</option>
+<option value="Federated States of Micronesia">Federated States of Micronesia</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Greece">Greece</option>
+<option value="Grenada">Grenada</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea Bissau">Guinea Bissau</option>
+<option value="Guyana">Guyana</option>
+<option value="Haiti">Haiti</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong, China</option>
+<option value="Hungary">Hungary</option>
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran">Iran</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Kosovo">Kosovo</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Laos">Laos</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Libya">Libya</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<option value="Macau">Macau, China</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mexico">Mexico</option>
+<option value="Moldova">Moldova</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="XF">Multiple Countries (Africa)</option>
+<option value="XM">Multiple Countries (Americas)</option>
+<option value="XA">Multiple Countries (Asia)</option>
+<option value="XE">Multiple Countries (Europe)</option>
+<option value="XN">Multiple Countries (North America)</option>
+<option value="XO">Multiple Countries (Oceania)</option>
+<option value="XS">Multiple Countries (South America)</option>
+<option value="XW">Multiple Countries (World)</option>
+<option value="Myanmar">Myanmar</option>
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="North Macedonia">North Macedonia</option>
+<option value="Norway">Norway</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Palestine">Palestine</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Qatar">Qatar</option>
+<option value="Korea">Republic of Korea</option>
+<option value="Romania">Romania</option>
+<option value="Russia">Russia</option>
+<option value="Rwanda">Rwanda</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">São Tomé and Príncipe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Sudan">South Sudan</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syria">Syria</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Tanzania">Tanzania</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-Leste">Timor-Leste</option>
+<option value="Togo">Togo</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Tuvalu">Tuvalu</option>
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option selected="selected" value="USA">United States</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<option value="Vanuatu">Vanuatu</option>
+<option value="Vatican City">Vatican City</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Vietnam">Vietnam</option>
+<option value="Yemen">Yemen</option>
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option></optgroup></select>
+</div>
+
+<div class="form-group">
+  <label for="Search">Search</label>
+  <div id="search-field">
+    <div class="input-group">
+      <span class="input-group-addon" data-toggle="tooltip" data-placement="top"
+            title="Name or city">
+        <i class="icon search "></i>
+      </span>
+      <input type="text" name="search" id="search" value="" class="form-control" />
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="When">When</label>
+  <div id="state" class="btn-group" data-toggle="buttons">
+    <label id="present" class="btn btn-primary">
+      <input type="radio" name="state" id="state_present" value="present" />
+      <span class="caption">Present</span>
+    </label>
+    <label id="recent" class="btn btn-primary" data-toggle="tooltip" title="Last 30 days">
+      <input type="radio" name="state" id="state_recent" value="recent" />
+      <span class="caption">Recent</span>
+    </label>
+    <ul class="dropdown-menu years">
+      <input type="hidden" name="year" id="year" value="all years" autocomplete="off" />
+        <li class="year"><a data-year="all years" href="#">All Years</a></li>
+        <li class="year"><a data-year="2024" href="#">2024</a></li>
+        <li class="year"><a data-year="2023" href="#">2023</a></li>
+        <li class="year"><a data-year="2022" href="#">2022</a></li>
+        <li class="year"><a data-year="2021" href="#">2021</a></li>
+        <li class="year"><a data-year="2020" href="#">2020</a></li>
+        <li class="year"><a data-year="2019" href="#">2019</a></li>
+        <li class="year"><a data-year="2018" href="#">2018</a></li>
+        <li class="year"><a data-year="2017" href="#">2017</a></li>
+        <li class="year"><a data-year="2016" href="#">2016</a></li>
+        <li class="year"><a data-year="2015" href="#">2015</a></li>
+        <li class="year"><a data-year="2014" href="#">2014</a></li>
+        <li class="year"><a data-year="2013" href="#">2013</a></li>
+        <li class="year"><a data-year="2012" href="#">2012</a></li>
+        <li class="year"><a data-year="2011" href="#">2011</a></li>
+        <li class="year"><a data-year="2010" href="#">2010</a></li>
+        <li class="year"><a data-year="2009" href="#">2009</a></li>
+        <li class="year"><a data-year="2008" href="#">2008</a></li>
+        <li class="year"><a data-year="2007" href="#">2007</a></li>
+        <li class="year"><a data-year="2006" href="#">2006</a></li>
+        <li class="year"><a data-year="2005" href="#">2005</a></li>
+        <li class="year"><a data-year="2004" href="#">2004</a></li>
+        <li class="year"><a data-year="2003" href="#">2003</a></li>
+        <li class="year"><a data-year="1982" href="#">1982</a></li>
+    </ul>
+    <label id="past" class="btn btn-primary" data-toggle="dropdown">
+      <input type="radio" name="state" id="state_past" value="past" />
+      <span class="caption">
+          Past
+      </span>
+    </label>
+    <label id="by_announcement" class="btn btn-primary" data-toggle="tooltip" title="Sort by announcement">
+      <input type="radio" name="state" id="state_by_announcement" value="by_announcement" />
+      <span class="caption">By announcement</span>
+    </label>
+    <label id="custom" class="btn btn-primary">
+      <input type="radio" name="state" id="state_custom" value="custom" />
+      <span class="caption">Custom</span>
+    </label>
+  </div>
+</div>
+
+<!-- These fields should be shown when "Custom" state is selected. -->
+<div class="form-group custom-control">
+  <label for="From">From</label>
+  <div class="input-group date datetimepicker">
+    <input type="text" name="from_date" id="from_date" value="" class="form-control date_picker" data-date-options="{&quot;locale&quot;:&quot;en&quot;,&quot;format&quot;:&quot;YYYY-MM-DD&quot;,&quot;dayViewHeaderFormat&quot;:&quot;MMMM YYYY&quot;}" />
+  </div>
+</div>
+<div class="form-group custom-control">
+  <label for="To">To</label>
+  <div class="input-group date datetimepicker">
+    <input type="text" name="to_date" id="to_date" value="" class="form-control date_picker" data-date-options="{&quot;locale&quot;:&quot;en&quot;,&quot;format&quot;:&quot;YYYY-MM-DD&quot;,&quot;dayViewHeaderFormat&quot;:&quot;MMMM YYYY&quot;}" />
+  </div>
+</div>
+
+<div class="form-group admin-selectors">
+  <label for="status">Status</label>
+  <div id="status" class="btn-group" data-toggle="buttons">
+    <label id="all" class="btn btn-info">
+      <input type="radio" name="status" id="status_all" value="all" />
+      <span class="caption">All</span>
+    </label>
+    <label id="warning" class="btn btn-warning">
+      <input type="radio" name="status" id="status_warning" value="warning" />
+      <span class="caption">Warning</span>
+    </label>
+    <label id="danger" class="btn btn-danger">
+      <input type="radio" name="status" id="status_danger" value="danger" />
+      <span class="caption">Danger</span>
+    </label>
+  </div>
+</div>
+
+<div id="delegate" class="form-group delegate-selector">
+  <label for="Delegate">Delegate</label>
+  <input type="text" name="delegate" id="delegate" value="" class="wca-autocomplete wca-autocomplete-only_one wca-autocomplete-only_staff_delegates wca-autocomplete-users_search" data-data="[]" />
+</div>
+
+<div id="registration-status" class="form-group registration-status-selector">
+  <input type="checkbox" name="show_registration_status" id="show_registration_status" />
+  <label for="show_registration_status">Show registration status icon</label>
+</div>
+
+<div id="cancelled" class="form-group cancel-selector">
+  <input type="checkbox" name="show_cancelled" id="show_cancelled" />
+  <label for="show_cancelled">Show cancelled competitions</label>
+</div>
+
+<div id="display" class="form-group">
+  <div class="btn-group btn-group-justified" data-toggle="buttons">
+    <label id="display-list" class="btn btn-info">
+      <input type="radio" name="display" id="display_list" value="list" />
+      <i class="icon list ul "></i> List
+    </label>
+    <label id="display-map" class="btn btn-info">
+      <input type="radio" name="display" id="display_map" value="map" />
+      <i class="icon map marker alternate "></i> Map
+    </label>
+  </div>
+</div>
+
+<script>
+  $('#present').on('click', function() {
+    $('#past .caption').html("Past");
+  });
+
+  $('#recent').on('click', function() {
+    $('#past .caption').html("Past");
+  });
+
+  $('#by_announcement').on('click', function() {
+    $('#past .caption').html("Past");
+  });
+
+  $('.years .year a').on('click', function(e) {
+    e.preventDefault();
+    var $past = $('#past');
+    var year = $(this).data('year');
+    var past_from = "Past from %{year}";
+    var past_all = "Past from all years";
+    var caption = Number.isInteger(year) ? past_from.replace("%{year}", year) : past_all;
+    $past.find('.caption').html(caption);
+    $('.years input[name="year"]').val(year);
+    if($past.is('.active')) {
+      $past.trigger('change');
+    } else {
+      // Also triggers 'change'
+      $past.button('toggle');
+    }
+  });
+
+  $('#state').on('change', function(event) {
+    $('.custom-control').toggle(event.target === $('#state_custom')[0]);
+  });
+
+  $('#present').button('toggle');
+
+  $('#display-map').button('toggle');
+</script>
+
+</form>
+    <div id="search-results" class="row competitions-map">
+      <div id="loading">
+        <div class="spinner-wrapper"><i class="icon spinner fa-spin fa-5x"></i></div>
+      </div>
+      <div id="competitions-list">
+          <script>
+    $(function() {
+      var competitions = [{"id":"VeryMiniSota2024","name":"Very Mini-Sota 2024","latitude_degrees":44.875401,"longitude_degrees":-93.319612,"cityName":"Edina, Minnesota","marker_date":"May 9, 2024","is_probably_over":false,"url":"/competitions/VeryMiniSota2024"},{"id":"AmherstFMCChallenge2024","name":"Amherst FMC Challenge 2024","latitude_degrees":42.373221,"longitude_degrees":-72.519853,"cityName":"Amherst, Massachusetts","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/AmherstFMCChallenge2024"},{"id":"BurleySummer2024","name":"Burley Summer 2024","latitude_degrees":42.564417,"longitude_degrees":-113.792805,"cityName":"Burley, Idaho","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/BurleySummer2024"},{"id":"GemCityAirplaneModeSpecial2024","name":"Gem City Airplane Mode Special 2024","latitude_degrees":39.642836,"longitude_degrees":-84.286608,"cityName":"Miamisburg, Ohio","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/GemCityAirplaneModeSpecial2024"},{"id":"HonoluluKupulau2024","name":"Honolulu Kupulau 2024","latitude_degrees":21.306225,"longitude_degrees":-157.812035,"cityName":"Honolulu, Hawaii","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/HonoluluKupulau2024"},{"id":"MinnesotaCubeMelt2024","name":"Minnesota Cube Melt 2024","latitude_degrees":44.835452,"longitude_degrees":-93.443682,"cityName":"Eden Prairie, Minnesota","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/MinnesotaCubeMelt2024"},{"id":"NorthJerseySpeedsolvingA2024","name":"North Jersey Speedsolving A 2024","latitude_degrees":40.860491,"longitude_degrees":-74.260593,"cityName":"North Caldwell, New Jersey","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/NorthJerseySpeedsolvingA2024"},{"id":"PortlaNxNd2024","name":"PortlaNxNd 2024","latitude_degrees":45.565656,"longitude_degrees":-122.575879,"cityName":"Portland, Oregon","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/PortlaNxNd2024"},{"id":"TemeculaValleySpring2024","name":"Temecula Valley Spring 2024","latitude_degrees":33.572059,"longitude_degrees":-117.178778,"cityName":"Murrieta, California","marker_date":"May 11, 2024","is_probably_over":false,"url":"/competitions/TemeculaValleySpring2024"},{"id":"AlabamaChampionship2024","name":"Alabama Championship 2024","latitude_degrees":34.00668,"longitude_degrees":-85.996056,"cityName":"Gadsden, Alabama","marker_date":"May 11 - 12, 2024","is_probably_over":false,"url":"/competitions/AlabamaChampionship2024"},{"id":"BlindFaithDenver2024","name":"Blind Faith Denver 2024","latitude_degrees":39.743275,"longitude_degrees":-105.005666,"cityName":"Denver, Colorado","marker_date":"May 11 - 12, 2024","is_probably_over":false,"url":"/competitions/BlindFaithDenver2024"},{"id":"HaihaiNoonoooHonolulu2024","name":"Haʻihaʻi Noʻonoʻo ʻo Honolulu 2024","latitude_degrees":21.30719,"longitude_degrees":-157.810731,"cityName":"Honolulu, Hawaii","marker_date":"May 12, 2024","is_probably_over":false,"url":"/competitions/HaihaiNoonoooHonolulu2024"},{"id":"NorthJerseySpeedsolvingB2024","name":"North Jersey Speedsolving B 2024","latitude_degrees":40.860491,"longitude_degrees":-74.260593,"cityName":"North Caldwell, New Jersey","marker_date":"May 12, 2024","is_probably_over":false,"url":"/competitions/NorthJerseySpeedsolvingB2024"},{"id":"BerwickSpring2024","name":"Berwick Spring 2024","latitude_degrees":41.072403,"longitude_degrees":-76.233503,"cityName":"Berwick, Pennsylvania","marker_date":"May 18, 2024","is_probably_over":false,"url":"/competitions/BerwickSpring2024"},{"id":"ChicagoAreaTwistSpringA2024","name":"Chicago Area Twist Spring A 2024","latitude_degrees":41.842274,"longitude_degrees":-88.073738,"cityName":"Glen Ellyn, Illinois","marker_date":"May 18, 2024","is_probably_over":false,"url":"/competitions/ChicagoAreaTwistSpringA2024"},{"id":"CountryRoadsHuntington2024","name":"Country Roads Huntington 2024","latitude_degrees":38.422053,"longitude_degrees":-82.441792,"cityName":"Huntington, West Virginia","marker_date":"May 18, 2024","is_probably_over":false,"url":"/competitions/CountryRoadsHuntington2024"},{"id":"QuabbiNxN2024","name":"QuabbiNxN 2024","latitude_degrees":42.400677,"longitude_degrees":-72.115139,"cityName":"Barre, Massachusetts","marker_date":"May 18, 2024","is_probably_over":false,"url":"/competitions/QuabbiNxN2024"},{"id":"QuietSeattleSpring2024","name":"Quiet Seattle Spring 2024","latitude_degrees":47.660014,"longitude_degrees":-122.305292,"cityName":"Seattle, Washington","marker_date":"May 18, 2024","is_probably_over":false,"url":"/competitions/QuietSeattleSpring2024"},{"id":"SacCubingXVII2024","name":"SacCubing XVII 2024","latitude_degrees":38.633171,"longitude_degrees":-121.339889,"cityName":"Carmichael, California","marker_date":"May 18, 2024","is_probably_over":false,"url":"/competitions/SacCubingXVII2024"},{"id":"UpperValleyCubeDay2024","name":"Upper Valley Cube Day 2024","latitude_degrees":43.651183,"longitude_degrees":-72.241158,"cityName":"Lebanon, New Hampshire","marker_date":"May 18, 2024","is_probably_over":false,"url":"/competitions/UpperValleyCubeDay2024"},{"id":"ArizonaChampionship2024","name":"Arizona Championship 2024","latitude_degrees":32.231127,"longitude_degrees":-110.950011,"cityName":"Tucson, Arizona","marker_date":"May 18 - 19, 2024","is_probably_over":false,"url":"/competitions/ArizonaChampionship2024"},{"id":"ChicagoAreaTwistSpringB2024","name":"Chicago Area Twist Spring B 2024","latitude_degrees":41.842274,"longitude_degrees":-88.073738,"cityName":"Glen Ellyn, Illinois","marker_date":"May 19, 2024","is_probably_over":false,"url":"/competitions/ChicagoAreaTwistSpringB2024"},{"id":"SacQuietSpring2024","name":"SacQuiet Spring 2024","latitude_degrees":38.689261,"longitude_degrees":-121.383132,"cityName":"North Highlands, California","marker_date":"May 19, 2024","is_probably_over":false,"url":"/competitions/SacQuietSpring2024"},{"id":"WallStreetSpringA2024","name":"Wall Street Spring A 2024","latitude_degrees":40.706968,"longitude_degrees":-74.007946,"cityName":"New York, New York","marker_date":"May 19, 2024","is_probably_over":false,"url":"/competitions/WallStreetSpringA2024"},{"id":"WallStreetSpringB2024","name":"Wall Street Spring B 2024","latitude_degrees":40.706968,"longitude_degrees":-74.007946,"cityName":"New York, New York","marker_date":"May 19, 2024","is_probably_over":false,"url":"/competitions/WallStreetSpringB2024"},{"id":"NewRocatNite12024","name":"New Roc at Nite 1 2024","latitude_degrees":40.913966,"longitude_degrees":-73.7778,"cityName":"New Rochelle, New York","marker_date":"May 22, 2024","is_probably_over":false,"url":"/competitions/NewRocatNite12024"},{"id":"SouthBayWeeknightBF32024","name":"South Bay Weeknight Brain Freeze 3 2024","latitude_degrees":37.420989,"longitude_degrees":-122.114393,"cityName":"Sunnyvale, California","marker_date":"May 22, 2024","is_probably_over":false,"url":"/competitions/SouthBayWeeknightBF32024"},{"id":"WashtenawQualifiers2024","name":"Washtenaw Qualifiers 2024","latitude_degrees":42.262131,"longitude_degrees":-83.662259,"cityName":"Ann Arbor, Michigan","marker_date":"May 24 - 26, 2024","is_probably_over":false,"url":"/competitions/WashtenawQualifiers2024"},{"id":"CornhuskerQuietClassic2024","name":"Cornhusker Quiet Classic 2024","latitude_degrees":41.205288,"longitude_degrees":-96.062006,"cityName":"Omaha, Nebraska","marker_date":"May 25, 2024","is_probably_over":false,"url":"/competitions/CornhuskerQuietClassic2024"},{"id":"KentSpring2024","name":"Kent Spring 2024","latitude_degrees":47.385837,"longitude_degrees":-122.238207,"cityName":"Kent, Washington","marker_date":"May 25, 2024","is_probably_over":false,"url":"/competitions/KentSpring2024"},{"id":"SouthDeerfieldClockFest2024","name":"South Deerfield Clock Fest 2024","latitude_degrees":42.481143,"longitude_degrees":-72.608741,"cityName":"South Deerfield, Massachusetts","marker_date":"May 25, 2024","is_probably_over":false,"url":"/competitions/SouthDeerfieldClockFest2024"},{"id":"VegasCubingCupSpring2024","name":"Vegas Cubing Cup Spring 2024","latitude_degrees":36.102549,"longitude_degrees":-115.201692,"cityName":"Las Vegas, Nevada","marker_date":"May 25, 2024","is_probably_over":false,"url":"/competitions/VegasCubingCupSpring2024"},{"id":"WestviewCubingFavorites2024","name":"Westview Cubing Favorites 2024","latitude_degrees":32.967024,"longitude_degrees":-117.148357,"cityName":"San Diego, California","marker_date":"May 25, 2024","is_probably_over":false,"url":"/competitions/WestviewCubingFavorites2024"},{"id":"LexMiniII2024","name":"Lex Mini II 2024","latitude_degrees":38.047991,"longitude_degrees":-84.548622,"cityName":"Lexington, Kentucky","marker_date":"May 25 - 26, 2024","is_probably_over":false,"url":"/competitions/LexMiniII2024"},{"id":"PretzelManiaDenver2024","name":"Pretzel Mania Denver 2024","latitude_degrees":39.742615,"longitude_degrees":-104.996572,"cityName":"Denver, Colorado","marker_date":"May 25 - 26, 2024","is_probably_over":false,"url":"/competitions/PretzelManiaDenver2024"},{"id":"NewJerseyChampionship2024","name":"New Jersey Championship 2024","latitude_degrees":40.098706,"longitude_degrees":-74.228401,"cityName":"Lakewood, New Jersey","marker_date":"May 25 - 27, 2024","is_probably_over":false,"url":"/competitions/NewJerseyChampionship2024"},{"id":"BASC62LIVESSF2024","name":"Bay Area Speedcubin' 62 LIVE - SSF 2024","latitude_degrees":37.64729,"longitude_degrees":-122.40537,"cityName":"South San Francisco, California","marker_date":"May 26, 2024","is_probably_over":false,"url":"/competitions/BASC62LIVESSF2024"},{"id":"CouncilBluffsCubingBuff2024","name":"Council Bluffs Cubing Buff 2024","latitude_degrees":41.241381,"longitude_degrees":-95.910513,"cityName":"Council Bluffs, Iowa","marker_date":"May 26, 2024","is_probably_over":false,"url":"/competitions/CouncilBluffsCubingBuff2024"},{"id":"MissouriSummerKickoff2024","name":"Missouri Summer Kickoff 2024","latitude_degrees":37.24086,"longitude_degrees":-93.262429,"cityName":"Springfield, Missouri","marker_date":"May 26, 2024","is_probably_over":false,"url":"/competitions/MissouriSummerKickoff2024"},{"id":"AMorninginCambridge2024","name":"A Morning in Cambridge 2024","latitude_degrees":42.366793,"longitude_degrees":-71.104976,"cityName":"Cambridge, Massachusetts","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/AMorninginCambridge2024"},{"id":"AnAfternooninCambridge2024","name":"An Afternoon in Cambridge 2024","latitude_degrees":42.366793,"longitude_degrees":-71.104976,"cityName":"Cambridge, Massachusetts","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/AnAfternooninCambridge2024"},{"id":"AustinCoverYourEyes2024","name":"Austin Cover Your Eyes 2024","latitude_degrees":30.254396,"longitude_degrees":-97.862005,"cityName":"Austin, Texas","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/AustinCoverYourEyes2024"},{"id":"BellinghamSpring2024","name":"Bellingham Spring 2024","latitude_degrees":48.739,"longitude_degrees":-122.486,"cityName":"Bellingham, Washington","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/BellinghamSpring2024"},{"id":"CubesontheBaysideSummer2024","name":"Cubes on the Bayside Summer 2024","latitude_degrees":40.762025,"longitude_degrees":-73.759784,"cityName":"Bayside, New York","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/CubesontheBaysideSummer2024"},{"id":"GreenSpring2024","name":"Green Spring 2024","latitude_degrees":40.948634,"longitude_degrees":-81.474518,"cityName":"Uniontown, Ohio","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/GreenSpring2024"},{"id":"PAQuietChampionship2024","name":"Pennsylvania Quiet Championship 2024","latitude_degrees":41.028131,"longitude_degrees":-76.362431,"cityName":"Bloomsburg, Pennsylvania","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/PAQuietChampionship2024"},{"id":"PleaseBeQuietAnchorage2024","name":"Please Be Quiet Anchorage 2024","latitude_degrees":61.217884,"longitude_degrees":-149.892633,"cityName":"Anchorage, Alaska","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/PleaseBeQuietAnchorage2024"},{"id":"RenoSideBlindSummer2024","name":"Reno Side \u0026 Blind Summer 2024","latitude_degrees":39.540062,"longitude_degrees":-119.814751,"cityName":"Reno, Nevada","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/RenoSideBlindSummer2024"},{"id":"RockyMountainFMCChampionship2024","name":"CubingUSA Rocky Mountain FMC Championship 2024","latitude_degrees":40.234603,"longitude_degrees":-111.662625,"cityName":"Multiple cities","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/RockyMountainFMCChampionship2024"},{"id":"SeeGeorgiaLakeRussellA2024","name":"See Georgia: Lake Russell A 2024","latitude_degrees":34.160557,"longitude_degrees":-82.740676,"cityName":"Elberton, Georgia","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/SeeGeorgiaLakeRussellA2024"},{"id":"UtahValleyFavorites2024","name":"Utah Valley Favorites 2024","latitude_degrees":40.114814,"longitude_degrees":-111.654513,"cityName":"Spanish Fork, Utah","marker_date":"Jun 1, 2024","is_probably_over":false,"url":"/competitions/UtahValleyFavorites2024"},{"id":"OhioStateSummer2024","name":"Ohio State Summer 2024","latitude_degrees":39.997631,"longitude_degrees":-83.008617,"cityName":"Columbus, Ohio","marker_date":"Jun 1 - 2, 2024","is_probably_over":false,"url":"/competitions/OhioStateSummer2024"},{"id":"WisconsinQualifier2024","name":"Wisconsin Qualifier 2024","latitude_degrees":43.07127,"longitude_degrees":-88.258816,"cityName":"Pewaukee, Wisconsin","marker_date":"Jun 1 - 2, 2024","is_probably_over":false,"url":"/competitions/WisconsinQualifier2024"},{"id":"DontPopAustin2024","name":"Don't Pop Austin 2024","latitude_degrees":30.212549,"longitude_degrees":-97.70538,"cityName":"Austin, Texas","marker_date":"Jun 2, 2024","is_probably_over":false,"url":"/competitions/DontPopAustin2024"},{"id":"EmpireStateNxN2024","name":"Empire State NxN 2024","latitude_degrees":42.649877,"longitude_degrees":-73.756094,"cityName":"Albany, New York","marker_date":"Jun 2, 2024","is_probably_over":false,"url":"/competitions/EmpireStateNxN2024"},{"id":"NewarkAcademySpring2024","name":"Newark Academy Spring 2024","latitude_degrees":40.778867,"longitude_degrees":-74.361948,"cityName":"Livingston, New Jersey","marker_date":"Jun 2, 2024","is_probably_over":false,"url":"/competitions/NewarkAcademySpring2024"},{"id":"RenoSummer2024","name":"Reno Summer 2024","latitude_degrees":39.507552,"longitude_degrees":-119.783768,"cityName":"Reno, Nevada","marker_date":"Jun 2, 2024","is_probably_over":false,"url":"/competitions/RenoSummer2024"},{"id":"SeeGeorgiaLakeRussellB2024","name":"See Georgia: Lake Russell B 2024","latitude_degrees":34.160557,"longitude_degrees":-82.740676,"cityName":"Elberton, Georgia","marker_date":"Jun 2, 2024","is_probably_over":false,"url":"/competitions/SeeGeorgiaLakeRussellB2024"},{"id":"TheLastFrontierSummer2024","name":"The Last Frontier Summer 2024","latitude_degrees":61.217884,"longitude_degrees":-149.892633,"cityName":"Anchorage, Alaska","marker_date":"Jun 2, 2024","is_probably_over":false,"url":"/competitions/TheLastFrontierSummer2024"},{"id":"MichiganMini192024","name":"Michigan Mini 19 2024","latitude_degrees":42.373885,"longitude_degrees":-83.467277,"cityName":"Plymouth, Michigan","marker_date":"Jun 3, 2024","is_probably_over":false,"url":"/competitions/MichiganMini192024"},{"id":"HeartlandChampionship2024","name":"CubingUSA Heartland Championship 2024","latitude_degrees":43.561747,"longitude_degrees":-96.749901,"cityName":"Sioux Falls, South Dakota","marker_date":"Jun 7 - 9, 2024","is_probably_over":false,"url":"/competitions/HeartlandChampionship2024"},{"id":"BignSkewbBoise2024","name":"Big n Skewb Boise 2024","latitude_degrees":43.589026,"longitude_degrees":-116.355107,"cityName":"Meridian, Idaho","marker_date":"Jun 8, 2024","is_probably_over":false,"url":"/competitions/BignSkewbBoise2024"},{"id":"CMTEvergreen2024","name":"Colorado Mountain Tour - Evergreen 2024","latitude_degrees":39.621718,"longitude_degrees":-105.33141,"cityName":"Evergreen, Colorado","marker_date":"Jun 8, 2024","is_probably_over":false,"url":"/competitions/CMTEvergreen2024"},{"id":"PuzzlesinPottsville2024","name":"Puzzles in Pottsville 2024","latitude_degrees":40.681402,"longitude_degrees":-76.213738,"cityName":"Pottsville, Pennsylvania","marker_date":"Jun 8, 2024","is_probably_over":false,"url":"/competitions/PuzzlesinPottsville2024"},{"id":"TrainsonMainLaGrange2024","name":"Trains on Main La Grange 2024","latitude_degrees":38.407598,"longitude_degrees":-85.381957,"cityName":"La Grange, Kentucky","marker_date":"Jun 8, 2024","is_probably_over":false,"url":"/competitions/TrainsonMainLaGrange2024"},{"id":"DFWCubingSummer2024","name":"DFW Cubing Summer 2024","latitude_degrees":32.748959,"longitude_degrees":-97.327365,"cityName":"Fort Worth, Texas","marker_date":"Jun 8 - 9, 2024","is_probably_over":false,"url":"/competitions/DFWCubingSummer2024"},{"id":"BerkeleySummer2024","name":"Berkeley Summer 2024","latitude_degrees":37.869113,"longitude_degrees":-122.259772,"cityName":"Berkeley, California","marker_date":"Jun 9, 2024","is_probably_over":false,"url":"/competitions/BerkeleySummer2024"},{"id":"CMTFrisco2024","name":"Colorado Mountain Tour - Frisco 2024","latitude_degrees":39.583382,"longitude_degrees":-106.088962,"cityName":"Frisco, Colorado","marker_date":"Jun 9, 2024","is_probably_over":false,"url":"/competitions/CMTFrisco2024"},{"id":"ConcordSummer2024","name":"Concord Summer 2024","latitude_degrees":35.361001,"longitude_degrees":-80.711566,"cityName":"Concord, North Carolina","marker_date":"Jun 9, 2024","is_probably_over":false,"url":"/competitions/ConcordSummer2024"},{"id":"SalemCubikon2024","name":"Salem Cubikon 2024","latitude_degrees":42.811263,"longitude_degrees":-71.243334,"cityName":"Salem, New Hampshire","marker_date":"Jun 9, 2024","is_probably_over":false,"url":"/competitions/SalemCubikon2024"},{"id":"CMTAvon2024","name":"Colorado Mountain Tour - Avon 2024","latitude_degrees":39.619714,"longitude_degrees":-106.47843,"cityName":"Avon, Colorado","marker_date":"Jun 10, 2024","is_probably_over":false,"url":"/competitions/CMTAvon2024"},{"id":"CMTGlenwoodSprings2024","name":"Colorado Mountain Tour - Glenwood Springs 2024","latitude_degrees":39.551227,"longitude_degrees":-107.338964,"cityName":"Glenwood Springs, Colorado","marker_date":"Jun 11, 2024","is_probably_over":false,"url":"/competitions/CMTGlenwoodSprings2024"},{"id":"CMTGrandJunction2024","name":"Colorado Mountain Tour - Grand Junction 2024","latitude_degrees":39.066963,"longitude_degrees":-108.569963,"cityName":"Grand Junction, Colorado","marker_date":"Jun 12, 2024","is_probably_over":false,"url":"/competitions/CMTGrandJunction2024"},{"id":"AckermanSpring2024","name":"Ackerman Spring 2024","latitude_degrees":41.893098,"longitude_degrees":-88.056249,"cityName":"Glen Ellyn, Illinois","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/AckermanSpring2024"},{"id":"GACubersWarmUp2024","name":"GA Cubers Warm Up 2024","latitude_degrees":33.775475,"longitude_degrees":-84.401283,"cityName":"Atlanta, Georgia","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/GACubersWarmUp2024"},{"id":"HillsboroFavorites2024","name":"Hillsboro Favorites 2024","latitude_degrees":45.542986,"longitude_degrees":-122.93601,"cityName":"Hillsboro, Oregon","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/HillsboroFavorites2024"},{"id":"HuskyPrideSeattle2024","name":"Husky Pride Seattle 2024","latitude_degrees":47.65931,"longitude_degrees":-122.30559,"cityName":"Seattle, Washington","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/HuskyPrideSeattle2024"},{"id":"NorthernKentucky2024","name":"Northern Kentucky 2024","latitude_degrees":39.030427,"longitude_degrees":-84.465933,"cityName":"Highland Heights, Kentucky","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/NorthernKentucky2024"},{"id":"ROCtheCube2024","name":"ROC the Cube 2024","latitude_degrees":43.04848,"longitude_degrees":-77.658712,"cityName":"Henrietta, New York","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/ROCtheCube2024"},{"id":"SoutheastFMCChampionship2024","name":"CubingUSA Southeast FMC Championship 2024","latitude_degrees":33.247131,"longitude_degrees":-83.101784,"cityName":"Multiple cities","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/SoutheastFMCChampionship2024"},{"id":"SpokaneSpring2024","name":"Spokane Spring 2024","latitude_degrees":47.738607,"longitude_degrees":-117.415102,"cityName":"Spokane, Washington","marker_date":"Jun 15, 2024","is_probably_over":false,"url":"/competitions/SpokaneSpring2024"},{"id":"BamaBigCubes2024","name":"Bama Big Cubes 2024","latitude_degrees":33.609086,"longitude_degrees":-85.835283,"cityName":"Oxford, Alabama","marker_date":"Jun 16, 2024","is_probably_over":false,"url":"/competitions/BamaBigCubes2024"},{"id":"GemCityDonutDNF2024","name":"Gem City Donut DNF 2024","latitude_degrees":39.765602,"longitude_degrees":-84.047877,"cityName":"Dayton, Ohio","marker_date":"Jun 16, 2024","is_probably_over":false,"url":"/competitions/GemCityDonutDNF2024"},{"id":"RockyMountainChampionship2024","name":"CubingUSA Rocky Mountain Championship 2024","latitude_degrees":40.234603,"longitude_degrees":-111.662625,"cityName":"Provo, Utah","marker_date":"Jun 20 - 22, 2024","is_probably_over":false,"url":"/competitions/RockyMountainChampionship2024"},{"id":"PennsylvaniaChampionship2024","name":"Pennsylvania Championship 2024","latitude_degrees":40.158188,"longitude_degrees":-76.989564,"cityName":"Mechanicsburg, Pennsylvania","marker_date":"Jun 21 - 23, 2024","is_probably_over":false,"url":"/competitions/PennsylvaniaChampionship2024"},{"id":"AppleCiderOpenMA2024","name":"Apple Cider Open MA 2024","latitude_degrees":42.526121,"longitude_degrees":-72.791861,"cityName":"Ashfield, Massachusetts","marker_date":"Jun 22, 2024","is_probably_over":false,"url":"/competitions/AppleCiderOpenMA2024"},{"id":"BayAreaSpeedcubin632024","name":"Bay Area Speedcubin' 63 - Atherton 2024","latitude_degrees":37.462623,"longitude_degrees":-122.173129,"cityName":"Atherton, California","marker_date":"Jun 22 - 23, 2024","is_probably_over":false,"url":"/competitions/BayAreaSpeedcubin632024"},{"id":"LouisianaChampionship2024","name":"Louisiana Championship 2024","latitude_degrees":30.468997,"longitude_degrees":-90.957904,"cityName":"Denham Springs, Louisiana","marker_date":"Jun 22 - 23, 2024","is_probably_over":false,"url":"/competitions/LouisianaChampionship2024"},{"id":"AshfieldSummerChallenge2024","name":"Ashfield Summer Challenge 2024","latitude_degrees":42.526121,"longitude_degrees":-72.791861,"cityName":"Ashfield, Massachusetts","marker_date":"Jun 23, 2024","is_probably_over":false,"url":"/competitions/AshfieldSummerChallenge2024"},{"id":"WCCFMCJune2024","name":"WCC FMC June 2024","latitude_degrees":38.509489,"longitude_degrees":-121.495056,"cityName":"Multiple cities","marker_date":"Jun 25, 2024","is_probably_over":false,"url":"/competitions/WCCFMCJune2024"},{"id":"NorthwestChampionship2024","name":"CubingUSA Northwest Championship 2024","latitude_degrees":47.82148,"longitude_degrees":-122.28371,"cityName":"Lynnwood, Washington","marker_date":"Jun 28 - 30, 2024","is_probably_over":false,"url":"/competitions/NorthwestChampionship2024"},{"id":"SoutheastChampionship2024","name":"CubingUSA Southeast Championship 2024","latitude_degrees":34.956434,"longitude_degrees":-81.936281,"cityName":"Spartanburg, South Carolina","marker_date":"Jun 28 - 30, 2024","is_probably_over":false,"url":"/competitions/SoutheastChampionship2024"},{"id":"BethesdaSummerShowdown2024","name":"Bethesda Summer Showdown 2024","latitude_degrees":39.004453,"longitude_degrees":-77.124525,"cityName":"Bethesda, Maryland","marker_date":"Jun 29, 2024","is_probably_over":false,"url":"/competitions/BethesdaSummerShowdown2024"},{"id":"CubingintheOceanCounty2024","name":"Cubing in the Ocean County 2024","latitude_degrees":40.091814,"longitude_degrees":-74.261974,"cityName":"Jackson, New Jersey","marker_date":"Jun 29, 2024","is_probably_over":false,"url":"/competitions/CubingintheOceanCounty2024"},{"id":"MichiganChampionship2024","name":"Michigan Championship 2024","latitude_degrees":42.734138,"longitude_degrees":-84.548263,"cityName":"Lansing, Michigan","marker_date":"Jun 29 - 30, 2024","is_probably_over":false,"url":"/competitions/MichiganChampionship2024"},{"id":"OklahomaChampionship2024","name":"Oklahoma Championship 2024","latitude_degrees":34.617165,"longitude_degrees":-98.428703,"cityName":"Lawton, Oklahoma","marker_date":"Jun 29 - 30, 2024","is_probably_over":false,"url":"/competitions/OklahomaChampionship2024"},{"id":"MichiganMini202024","name":"Michigan Mini 20 2024","latitude_degrees":42.373885,"longitude_degrees":-83.467277,"cityName":"Plymouth, Michigan","marker_date":"Jul 1, 2024","is_probably_over":false,"url":"/competitions/MichiganMini202024"},{"id":"CajunCubeClash2024","name":"Cajun Cube Clash 2024","latitude_degrees":30.443781,"longitude_degrees":-91.107201,"cityName":"Baton Rouge, Louisiana","marker_date":"Jul 5, 2024","is_probably_over":false,"url":"/competitions/CajunCubeClash2024"},{"id":"RichardsonCubingAfternoon2024","name":"Richardson Cubing Afternoon 2024","latitude_degrees":32.986316,"longitude_degrees":-96.74884,"cityName":"Richardson, Texas","marker_date":"Jul 6, 2024","is_probably_over":false,"url":"/competitions/RichardsonCubingAfternoon2024"},{"id":"SouthernFMCChampionship2024","name":"CubingUSA Southern FMC Championship 2024","latitude_degrees":32.986289,"longitude_degrees":-96.748797,"cityName":"Multiple cities","marker_date":"Jul 6, 2024","is_probably_over":false,"url":"/competitions/SouthernFMCChampionship2024"},{"id":"FolsomSummer2024","name":"Folsom Summer 2024","latitude_degrees":38.68161,"longitude_degrees":-121.165043,"cityName":"Folsom, California","marker_date":"Jul 7, 2024","is_probably_over":false,"url":"/competitions/FolsomSummer2024"},{"id":"BigandBlindNorthAndover2024","name":"Big and Blind North Andover 2024","latitude_degrees":42.707499,"longitude_degrees":-71.085525,"cityName":"North Andover, Massachusetts","marker_date":"Jul 13, 2024","is_probably_over":false,"url":"/competitions/BigandBlindNorthAndover2024"},{"id":"DontBlowAwayCasper2024","name":"Don't Blow Away Casper 2024","latitude_degrees":42.831073,"longitude_degrees":-106.332858,"cityName":"Casper, Wyoming","marker_date":"Jul 13, 2024","is_probably_over":false,"url":"/competitions/DontBlowAwayCasper2024"},{"id":"GetReadyGroveCity2024","name":"Get Ready Grove City 2024","latitude_degrees":39.865615,"longitude_degrees":-83.069792,"cityName":"Grove City, Ohio","marker_date":"Jul 13, 2024","is_probably_over":false,"url":"/competitions/GetReadyGroveCity2024"},{"id":"WesternFMCChampions2024","name":"CubingUSA Western FMC Championship 2024","latitude_degrees":38.509489,"longitude_degrees":-121.495056,"cityName":"Multiple cities","marker_date":"Jul 13, 2024","is_probably_over":false,"url":"/competitions/WesternFMCChampions2024"},{"id":"MinnesotaWarmUp2024","name":"Minnesota Warm Up 2024","latitude_degrees":44.856335,"longitude_degrees":-93.242453,"cityName":"Bloomington, Minnesota","marker_date":"Jul 13 - 14, 2024","is_probably_over":false,"url":"/competitions/MinnesotaWarmUp2024"},{"id":"RubiksNorthAmericaAllStars2024","name":"Rubik's North America All-Stars 2024","latitude_degrees":44.854865,"longitude_degrees":-93.242214,"cityName":"Bloomington, Minnesota","marker_date":"Jul 16, 2024","is_probably_over":false,"url":"/competitions/RubiksNorthAmericaAllStars2024"},{"id":"NAC2024","name":"Rubik's WCA North American Championship 2024","latitude_degrees":44.970268,"longitude_degrees":-93.273375,"cityName":"Minneapolis, Minnesota","marker_date":"Jul 18 - 21, 2024","is_probably_over":false,"url":"/competitions/NAC2024"},{"id":"PanhandleLakeCubeCamp2024","name":"Panhandle Lake Cube \u0026 Camp 2024","latitude_degrees":47.177717,"longitude_degrees":-123.266398,"cityName":"Shelton, Washington","marker_date":"Jul 27, 2024","is_probably_over":false,"url":"/competitions/PanhandleLakeCubeCamp2024"},{"id":"MysticCubikon2024","name":"Mystic Cubikon 2024","latitude_degrees":41.327804,"longitude_degrees":-72.057675,"cityName":"Groton, Connecticut","marker_date":"Jul 28, 2024","is_probably_over":false,"url":"/competitions/MysticCubikon2024"},{"id":"SouthernChampionship2024","name":"CubingUSA Southern Championship 2024","latitude_degrees":35.459385,"longitude_degrees":-97.515742,"cityName":"Oklahoma City, Oklahoma","marker_date":"Aug 2 - 4, 2024","is_probably_over":false,"url":"/competitions/SouthernChampionship2024"},{"id":"WesternChampionship2024","name":"CubingUSA Western Championship 2024","latitude_degrees":32.87972,"longitude_degrees":-117.236195,"cityName":"San Diego, California","marker_date":"Aug 2 - 4, 2024","is_probably_over":false,"url":"/competitions/WesternChampionship2024"},{"id":"TacomaSummer2024","name":"Tacoma Summer 2024","latitude_degrees":47.2488,"longitude_degrees":-122.4388,"cityName":"Tacoma, Washington","marker_date":"Aug 3, 2024","is_probably_over":false,"url":"/competitions/TacomaSummer2024"},{"id":"LandofLincoln2024","name":"Land of Lincoln 2024","latitude_degrees":39.801089,"longitude_degrees":-89.64453,"cityName":"Springfield, Illinois","marker_date":"Aug 10, 2024","is_probably_over":false,"url":"/competitions/LandofLincoln2024"},{"id":"NewEnglandQuietChampionship2024","name":"CubingUSA New England Quiet Championship 2024","latitude_degrees":42.327338,"longitude_degrees":-72.525404,"cityName":"Amherst, Massachusetts","marker_date":"Aug 10, 2024","is_probably_over":false,"url":"/competitions/NewEnglandQuietChampionship2024"},{"id":"MissouriChampionship2024","name":"Missouri Championship 2024","latitude_degrees":38.859188,"longitude_degrees":-94.173447,"cityName":"Lone Jack, Missouri","marker_date":"Aug 16 - 18, 2024","is_probably_over":false,"url":"/competitions/MissouriChampionship2024"},{"id":"NewEnglandChampionship2024","name":"CubingUSA New England Championship 2024","latitude_degrees":41.824253,"longitude_degrees":-71.416934,"cityName":"Providence, Rhode Island","marker_date":"Aug 23 - 25, 2024","is_probably_over":false,"url":"/competitions/NewEnglandChampionship2024"},{"id":"BrooklineFavorites2024","name":"Brookline Favorites 2024","latitude_degrees":42.727649,"longitude_degrees":-71.635861,"cityName":"Brookline, New Hampshire","marker_date":"Aug 31, 2024","is_probably_over":false,"url":"/competitions/BrooklineFavorites2024"},{"id":"LaLaLand2024","name":"La La Land 2024","latitude_degrees":33.982298,"longitude_degrees":-118.395999,"cityName":"Los Angeles, California","marker_date":"Aug 31 - Sep 1, 2024","is_probably_over":false,"url":"/competitions/LaLaLand2024"},{"id":"PretzelManiaSummer2024","name":"Pretzel Mania Summer 2024","latitude_degrees":40.036909,"longitude_degrees":-76.304927,"cityName":"Lancaster, Pennsylvania","marker_date":"Aug 31 - Sep 1, 2024","is_probably_over":false,"url":"/competitions/PretzelManiaSummer2024"},{"id":"SacCubingXVIII2024","name":"SacCubing XVIII 2024","latitude_degrees":38.633171,"longitude_degrees":-121.339889,"cityName":"Carmichael, California","marker_date":"Sep 14, 2024","is_probably_over":false,"url":"/competitions/SacCubingXVIII2024"},{"id":"SacQuietFall2024","name":"SacQuiet Fall 2024","latitude_degrees":38.689261,"longitude_degrees":-121.383132,"cityName":"North Highlands, California","marker_date":"Sep 15, 2024","is_probably_over":false,"url":"/competitions/SacQuietFall2024"},{"id":"HighFiveBloomsburg2024","name":"High Five Bloomsburg 2024","latitude_degrees":41.009557,"longitude_degrees":-76.409162,"cityName":"Bloomsburg, Pennsylvania","marker_date":"Sep 21, 2024","is_probably_over":false,"url":"/competitions/HighFiveBloomsburg2024"},{"id":"HonoluluHaulelau2024","name":"Honolulu Hāʻulelau 2024","latitude_degrees":21.306072,"longitude_degrees":-157.812305,"cityName":"Honolulu, Hawaii","marker_date":"Sep 21, 2024","is_probably_over":false,"url":"/competitions/HonoluluHaulelau2024"},{"id":"HonoluluHippocampus2024","name":"Honolulu Hippocampus 2024","latitude_degrees":21.30719,"longitude_degrees":-157.810731,"cityName":"Honolulu, Hawaii","marker_date":"Sep 22, 2024","is_probably_over":false,"url":"/competitions/HonoluluHippocampus2024"},{"id":"GreatLakesChampionship2024","name":"CubingUSA Great Lakes Championship 2024","latitude_degrees":38.254174,"longitude_degrees":-85.754808,"cityName":"Louisville, Kentucky","marker_date":"Oct 4 - 6, 2024","is_probably_over":false,"url":"/competitions/GreatLakesChampionship2024"},{"id":"GoldenTouch2024","name":"Golden Touch 2024","latitude_degrees":39.733808,"longitude_degrees":-105.194799,"cityName":"Golden, Colorado","marker_date":"Oct 5, 2024","is_probably_over":false,"url":"/competitions/GoldenTouch2024"},{"id":"FlexinLex2024","name":"Flex in Lex 2024","latitude_degrees":38.017204,"longitude_degrees":-84.434916,"cityName":"Lexington, Kentucky","marker_date":"Oct 19, 2024","is_probably_over":false,"url":"/competitions/FlexinLex2024"},{"id":"MahaloiaMaui2024","name":"Mahalo iā Maui 2024","latitude_degrees":20.919246,"longitude_degrees":-156.378211,"cityName":"Paia, Hawaii","marker_date":"Nov 9, 2024","is_probably_over":false,"url":"/competitions/MahaloiaMaui2024"},{"id":"LoonCubikon2024","name":"Loon Cubikon 2024","latitude_degrees":43.04045,"longitude_degrees":-71.45359,"cityName":"Manchester, New Hampshire","marker_date":"Nov 24, 2024","is_probably_over":false,"url":"/competitions/LoonCubikon2024"},{"id":"JayPeakCubikon2024","name":"Jay Peak Cubikon 2024","latitude_degrees":44.937901,"longitude_degrees":-72.504772,"cityName":"Jay Peak, Vermont","marker_date":"Dec 7, 2024","is_probably_over":false,"url":"/competitions/JayPeakCubikon2024"}];
+      /* This file may be rendered in response to an Ajax request in order to replace the existing competitions list.
+         We take this into account and prevent from creating the map twice. */
+      if(window.wca._competitionsIndexMap === undefined) {
+        window.wca._competitionsIndexMap = window.wca.createCompetitionsMapLeaflet('competitions-map');
+      }
+      window.wca.removeMapMarkersLeaflet(window.wca._competitionsIndexMap);
+      window.wca.addCompetitionsToMapLeaflet(window.wca._competitionsIndexMap, competitions);
+    });
+  </script>
+
+      </div>
+      <div class="col-xs-12 col-md-12">
+        <div id="competitions-map"></div>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+    <footer class="footer ui vertical segment">
+  <div class="ui container footer-links text-center">
+    <div class="ui horizontal divided list">
+      <div class="item">
+        <a href="/about">About us</a>
+      </div>
+      <div class="item">
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="item">
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="item">
+        <a href="https://github.com/thewca/worldcubeassociation.org" target="_blank" class="hide-new-window-icon">
+          <i class="icon github "></i> GitHub
+        </a>
+      </div>
+      <div class="item">
+        <a href="/privacy">Privacy</a>
+      </div>
+      <div class="item">
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      <div class="cookies-eu js-cookies-eu" >
+      <span class="cookies-eu-content-holder">Cookies help us deliver our services. By using our services, you agree to our use of cookies.</span>
+      <span class="cookies-eu-button-holder">
+      <button class="cookies-eu-ok js-cookies-eu-ok"> OK </button>
+      </span>
+    </div>
+
+</body>
+</html>
