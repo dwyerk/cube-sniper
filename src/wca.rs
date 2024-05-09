@@ -1,6 +1,7 @@
 use std::error::Error;
 use select::document::Document;
 use select::predicate::{Attr, Name, Predicate};
+use serde_json::Value;
 
 use crate::geometry::haversine_distance;
 
@@ -9,23 +10,20 @@ pub const WCA_BASE_URL: &str = "https://www.worldcubeassociation.org";
 pub struct Competition {
     pub name: String,
     pub marker_date: String,
-    pub latitude_degrees: String,
-    pub longitude_degrees: String,
-    pub lat_long: (f64, f64),
+    pub latitude_degrees: f64,
+    pub longitude_degrees: f64,
     pub city_name: String,
     pub url: String,
 }
 
 impl Competition {
-    pub fn new(name: String, marker_date: String, latitude_degrees: String, longitude_degrees: String, city_name: String, url: String) -> Self {
-        let lat_long = (latitude_degrees.parse::<f64>().unwrap(), longitude_degrees.parse::<f64>().unwrap());
+    pub fn new(name: String, marker_date: String, latitude_degrees: f64, longitude_degrees: f64, city_name: String, url: String) -> Self {
         let url = format!("{}{}", WCA_BASE_URL, url);
         Self {
             name,
             marker_date,
             latitude_degrees,
             longitude_degrees,
-            lat_long,
             city_name,
             url,
         }
@@ -35,7 +33,6 @@ impl Competition {
         println!("Marker Date: {}", self.marker_date);
         println!("Latitude Degrees: {}", self.latitude_degrees);
         println!("Longitude Degrees: {}", self.longitude_degrees);
-        println!("Lat Long: {:?}", self.lat_long);
         println!("City Name: {}", self.city_name);
         println!("URL: {}", self.url);
     }
@@ -66,47 +63,19 @@ pub fn get_competitions(competitions_html: &str) -> Result<Vec<Competition>, Box
     // Create a vector to store the competitions
     let mut competition_vec = Vec::new();
 
-    // Iterate over each competition and store the data in the vector
-    for competition in competitions.split("},{") {
-        let competition = competition.replace("{", "").replace("}", "").replace("\"", "");
+    let json_obj: Value = serde_json::from_str(competitions)?;
 
-        // Each competition item is a string with the following format
-        //   "id": "KansasChampionship2024",
-        //   "name": "Kansas Championship 2024",
-        //   "latitude_degrees": 37.689175,
-        //   "longitude_degrees": -97.346626,
-        //   "cityName": "Wichita, Kansas",
-        //   "marker_date": "May 3 - 5, 2024",
-        //   "is_probably_over": false,
-        //   "url": "/competitions/KansasChampionship2024"
-
-        let mut name = String::new();
-        let mut marker_date = String::new();
-        let mut latitude_degrees = String::new();
-        let mut longitude_degrees = String::new();
-        let mut city_name = String::new();
-        let mut url = String::new();
-
-        // For each key/value pair, split the string and get the value
-        let key_value_pairs = competition.split(",").collect::<Vec<&str>>();
-        for key_value_pair in key_value_pairs {
-            let key_value_pair = key_value_pair.split(":").collect::<Vec<&str>>();
-            match key_value_pair[0] {
-                "id" => (),
-                "name" => name = key_value_pair[1].to_string(),
-                "latitude_degrees" => latitude_degrees = key_value_pair[1].to_string(),
-                "longitude_degrees" => longitude_degrees = key_value_pair[1].to_string(),
-                "cityName" => city_name = key_value_pair[1].to_string(),
-                "marker_date" => marker_date = key_value_pair[1].to_string(), // FIXME this is currently losing the second half of the date because it has a comma in it
-                "is_probably_over" => (),
-                "url" => url = key_value_pair[1].to_string(),
-                _ => (),
-            }
-        }
-
-        let competition_data = Competition::new(name, marker_date, latitude_degrees, longitude_degrees, city_name, url);
+    for competition in json_obj.as_array().unwrap() {
+        let name = competition["name"].as_str().unwrap();
+        let marker_date = competition["marker_date"].as_str().unwrap();
+        let latitude_degrees = competition["latitude_degrees"].as_f64().unwrap();
+        let longitude_degrees = competition["longitude_degrees"].as_f64().unwrap();
+        let city_name = competition["cityName"].as_str().unwrap();
+        let url = competition["url"].as_str().unwrap();
+        let competition_data = Competition::new(name.to_string(), marker_date.to_string(), latitude_degrees, longitude_degrees, city_name.to_string(), url.to_string());
         competition_vec.push(competition_data);
     }
+
     Ok(competition_vec)
 }
 
@@ -137,8 +106,8 @@ pub fn retrieve_competitions(region: &str) -> Result<String, Box<dyn Error>> {
 /// use cube_sniper::geometry::haversine_distance;
 /// use cube_sniper::wca::find_competitions_within_distance;
 /// let mut competitions = vec![
-///   Competition::new("Competition 1".to_string(), "2021-01-01".to_string(), "37.7749".to_string(), "-122.4194".to_string(), "San Francisco".to_string(), "/competition/competition1".to_string()),
-///   Competition::new("Competition 2".to_string(), "2021-01-02".to_string(), "34.0522".to_string(), "-118.2437".to_string(), "Los Angeles".to_string(), "/competition/competition2".to_string()),
+///   Competition::new("Competition 1".to_string(), "2021-01-01".to_string(), 37.7749, -122.4194, "San Francisco".to_string(), "/competition/competition1".to_string()),
+///   Competition::new("Competition 2".to_string(), "2021-01-02".to_string(), 34.0522, -118.2437, "Los Angeles".to_string(), "/competition/competition2".to_string()),
 /// ];
 /// let search_lat_long = (37.7749, -122.4194);
 /// let distance = 150.0;
@@ -149,7 +118,7 @@ pub fn retrieve_competitions(region: &str) -> Result<String, Box<dyn Error>> {
 pub fn find_competitions_within_distance(competitions: &mut [Competition], search_lat_long: (f64, f64), distance_miles: f64) -> Vec<(&Competition, f64)> {
     let mut competitions_within_distance: Vec<(&Competition, f64)> = Vec::new();
     for competition in competitions {
-        let distance = haversine_distance(search_lat_long, competition.lat_long);
+        let distance = haversine_distance(search_lat_long, (competition.latitude_degrees, competition.longitude_degrees));
         if distance <= distance_miles {
             competitions_within_distance.push((competition, distance));
         }
@@ -165,8 +134,8 @@ pub fn find_competitions_within_distance(competitions: &mut [Competition], searc
 /// ```
 /// use cube_sniper::wca::{Competition, print_competitions};
 /// let competitions = vec![
-///   Competition::new("Competition 1".to_string(), "2021-01-01".to_string(), "37.7749".to_string(), "-122.4194".to_string(), "San Francisco".to_string(), "/competition/competition1".to_string()),
-///   Competition::new("Competition 2".to_string(), "2021-01-02".to_string(), "34.0522".to_string(), "-118.2437".to_string(), "Los Angeles".to_string(), "/competition/competition2".to_string()),
+///   Competition::new("Competition 1".to_string(), "2021-01-01".to_string(), 37.7749, -122.4194, "San Francisco".to_string(), "/competition/competition1".to_string()),
+///   Competition::new("Competition 2".to_string(), "2021-01-02".to_string(), 34.0522, -118.2437, "Los Angeles".to_string(), "/competition/competition2".to_string()),
 /// ];
 /// print_competitions(&competitions);
 /// ```
