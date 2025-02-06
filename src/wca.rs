@@ -134,7 +134,7 @@ pub fn retrieve_competitions_html(region: &str) -> Result<String, Box<dyn Error>
 /// use cube_sniper::wca::retrieve_competitions_json;
 /// let region = "North America";
 /// let competitions_json = retrieve_competitions_json(region, "2025-02-06").unwrap();
-/// println!("{}", competitions_json);
+/// println!("{}", competitions_json[0]);
 /// ```
 pub fn retrieve_competitions_json(region: &str, yyyy_mm_dd_date: &str) -> Result<Vec<String>, Box<dyn Error>> {
     let client = reqwest::blocking::Client::builder().build()?;
