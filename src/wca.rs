@@ -12,19 +12,19 @@ pub struct Competition {
     pub marker_date: String,
     pub latitude_degrees: f64,
     pub longitude_degrees: f64,
-    pub city_name: String,
+    pub city: String,
     pub url: String,
 }
 
 impl Competition {
-    pub fn new(name: String, marker_date: String, latitude_degrees: f64, longitude_degrees: f64, city_name: String, url: String) -> Self {
+    pub fn new(name: String, marker_date: String, latitude_degrees: f64, longitude_degrees: f64, city: String, url: String) -> Self {
         let url = format!("{}{}", WCA_BASE_URL, url);
         Self {
             name,
             marker_date,
             latitude_degrees,
             longitude_degrees,
-            city_name,
+            city,
             url,
         }
     }
@@ -33,7 +33,7 @@ impl Competition {
         println!("Marker Date: {}", self.marker_date);
         println!("Latitude Degrees: {}", self.latitude_degrees);
         println!("Longitude Degrees: {}", self.longitude_degrees);
-        println!("City Name: {}", self.city_name);
+        println!("City Name: {}", self.city);
         println!("URL: {}", self.url);
     }
 }
@@ -70,31 +70,101 @@ pub fn get_competitions(competitions_html: &str) -> Result<Vec<Competition>, Box
         let marker_date = competition["marker_date"].as_str().unwrap();
         let latitude_degrees = competition["latitude_degrees"].as_f64().unwrap();
         let longitude_degrees = competition["longitude_degrees"].as_f64().unwrap();
-        let city_name = competition["cityName"].as_str().unwrap();
+        let city = competition["cityName"].as_str().unwrap();
         let url = competition["url"].as_str().unwrap();
-        let competition_data = Competition::new(name.to_string(), marker_date.to_string(), latitude_degrees, longitude_degrees, city_name.to_string(), url.to_string());
+        let competition_data = Competition::new(name.to_string(), marker_date.to_string(), latitude_degrees, longitude_degrees, city.to_string(), url.to_string());
         competition_vec.push(competition_data);
     }
 
     Ok(competition_vec)
 }
 
-/// Retrieve competitions from the WCA website
+/// Get competitions from the JSON of the competitions page
+/// 
+/// # Examples
+/// 
+/// ```
+/// use cube_sniper::wca::get_competitions_from_json;
+/// let competitions_json = std::fs::read_to_string("tests/fixtures/competitions.json").unwrap();
+/// let competitions = get_competitions_from_json(&competitions_json).unwrap();
+/// assert_eq!(competitions.len(), 25);
+/// assert_eq!(competitions[0].name, "Cubing in Borinquen 2025");
+/// ```
+pub fn get_competitions_from_json(competitions_json: &str) -> Result<Vec<Competition>, Box<dyn Error>> {
+    let json_obj: Value = serde_json::from_str(competitions_json)?;
+    let mut competition_vec = Vec::new();
+
+    for competition in json_obj.as_array().unwrap() {
+        let name = competition["name"].as_str().unwrap();
+        let marker_date = competition["start_date"].as_str().unwrap();
+        let latitude_degrees = competition["latitude_degrees"].as_f64().unwrap();
+        let longitude_degrees = competition["longitude_degrees"].as_f64().unwrap();
+        let city = competition["city"].as_str().unwrap();
+        let url = format!("/competitions/{}", competition["id"].as_str().unwrap());
+        let competition_data = Competition::new(name.to_string(), marker_date.to_string(), latitude_degrees, longitude_degrees, city.to_string(), url.to_string());
+        competition_vec.push(competition_data);
+    }
+
+    Ok(competition_vec)
+}
+
+/// Retrieve competitions from the WCA website (older HTML version)
 /// 
 /// # Examples
 /// 
 /// ```no_run
-/// use cube_sniper::wca::retrieve_competitions;
+/// use cube_sniper::wca::retrieve_competitions_html;
 /// let region = "North America";
-/// let competitions_html = retrieve_competitions(region).unwrap();
+/// let competitions_html = retrieve_competitions_html(region).unwrap();
 /// println!("{}", competitions_html);
 /// ```
-pub fn retrieve_competitions(region: &str) -> Result<String, Box<dyn Error>> {
+pub fn retrieve_competitions_html(region: &str) -> Result<String, Box<dyn Error>> {
     let client = reqwest::blocking::Client::builder().build()?;
     let res = client.get(format!("{}/competitions?region={}&search=&state=present&year=all+years&from_date=&to_date=&delegate=&display=map", WCA_BASE_URL, region))
         .send()?
         .text()?;
     Ok(res)
+}
+
+/// Retrieve competitions from the WCA website (newer JSON version)
+/// 
+/// # Examples
+/// 
+/// ```no_run
+/// use cube_sniper::wca::retrieve_competitions_json;
+/// let region = "North America";
+/// let competitions_json = retrieve_competitions_json(region, "2025-02-06").unwrap();
+/// println!("{}", competitions_json);
+/// ```
+pub fn retrieve_competitions_json(region: &str, yyyy_mm_dd_date: &str) -> Result<Vec<String>, Box<dyn Error>> {
+    let client = reqwest::blocking::Client::builder().build()?;
+    let mut page = 1;
+    // Save the results of each page in an array of strings
+    let mut jsons = Vec::new();
+
+    loop {
+        let res = client.get(format!("{}/api/v0/competition_index?region={}&include_cancelled=false&sort=start_date%2Cend_date%2Cname&ongoing_and_future={}&page={}", WCA_BASE_URL, region, yyyy_mm_dd_date, page))
+            .send()?;
+        // Get the "Link" header from the response and parse the HTML it contains. If it contains a "rel=next" link, then we need to fetch the next page.
+        let link_header = res.headers().get("Link").unwrap().to_str().unwrap();
+        let mut next_page = false;
+        for link in link_header.split(",") {
+            if link.contains("rel=\"next\"") {
+                next_page = true;
+                break;
+            }
+        }
+
+        let json = res.text()?;
+        jsons.push(json);
+
+        if !next_page {
+            break;
+        } else {
+            page += 1;
+        }
+    }
+    Ok(jsons)
 }
 
 /// Find competitions within a certain distance of a location
